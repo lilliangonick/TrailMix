@@ -48,14 +48,6 @@ export const Home = () => {
     <Box minH='100vh' minW='100vw'>
       <Navbar/>
       <VStack>
-        <Heading
-          as="h1"
-          size="lg"
-          textAlign="center"
-          color="cyan.600"
-        >
-          My Trips
-        </Heading>
         <Flex 
           minH="100vh" 
           minW="100vw" 
