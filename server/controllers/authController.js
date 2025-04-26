@@ -12,7 +12,17 @@ exports.registerUser = async (req, res) => {
     // check if user exists through email
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ message: 'Username taken' });
+    }
+
+    // password checking
+    if (password.length < 6) {
+        return res.status(400).json({ message: 'Password must be at least 6 characters long' });
+    }
+
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    if (!hasSpecialChar) {
+        return res.status(400).json({ message: 'Password must contain at least one special character' });
     }
 
     // hash the password
