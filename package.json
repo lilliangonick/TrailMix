@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@chakra-ui/radio": "^2.1.2"
+  }
+}

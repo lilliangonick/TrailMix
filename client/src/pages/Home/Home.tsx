@@ -18,85 +18,70 @@ export const Home = () => {
   const [trips, setTrips] = useState([
     {
       id: 1,
-      title: "Yosemite Adventure",
+      title: "Yosemite",
       image: "../../../assets/yosemite.jpg",
-    },
-    {
-      id: 2,
-      title: "Coastal Road Trip",
-      image: "../../../assets/coastal.jpg",
     },
   ]);
 
   return (
     <Box minH='100vh' minW='100vw'>
-      <Navbar/>
-      <Flex 
-        minH="100vh" 
-        minW="100vw" 
-        align="center" 
-        justify="center" 
-        bgImage={`url('/assets/trailmixbg.png')`} 
-        bgPos="center top"
-        bgRepeat="no-repeat" 
-        p={6}
-      >
-        <Box
-          w="full"
-          maxW="6xl"
-          bg="gray.50/77"
-          p={14}
-          borderRadius="sm"
+      <Navbar/>        
+        <Flex 
+          minH="100vh" 
+          minW="100vw" 
+          align="center top" 
+          justify="center"
+          bgImage={`url('/assets/trailmixbg.png')`} 
+          bgPos="center top"
+          bgRepeat="no-repeat" 
+          p={6}
         >
-          <VStack gap={8} align="stretch">
-            <Heading
-              as="h1"
-              size="lg"
-              textAlign="center"
-              color="cyan.600"
-            >
-              My Trips
-            </Heading>
-            
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
-              {/* Start New Trip Card */}
-              <Box
-                as="button"
-                onClick={onOpen}
-                p={6}
-                bg="white"
-                borderRadius="md"
-                boxShadow="md"
-                _hover={{ transform: 'scale(1.02)', transition: 'transform 0.2s' }}
-                cursor="pointer"
-                textAlign="center"
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                minH="200px"
-              >
-                <Text fontSize="2xl" fontWeight="bold" color="cyan.600" mb={2}>
-                  Start a New Trip
-                </Text>
-                <Text color="gray.600">
-                  Click here to plan your next adventure
-                </Text>
-              </Box>
 
-              {/* Existing Trip Cards */}
-              {trips.map((trip) => (
-                <TripCard
-                  key={trip.id}
-                  imageSrc={trip.image}
-                  title={trip.title}
-                />
-              ))}
-            </SimpleGrid>
-          </VStack>
-        </Box>
-      </Flex>
+          <Box
+            w="full"
+            maxW="6xl"
+            p={14}
+          >
+            <VStack gap={8} align="stretch">
+              <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
+                {/* Start New Trip Card */}
+                <Box
+                  as="button"
+                  onClick={onOpen}
+                  w="300px"
+                  h="375px"
+                  bg="white/50"
+                  border="1px dashed gray"
+                  borderRadius="md"
+                  boxShadow="md"
+                  _hover={{ transform: 'scale(1.02)', transition: 'transform 0.2s' }}
+                  cursor="pointer"
+                  textAlign="center"
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Heading fontSize="2xl" color="cyan.600" mb={2}>
+                    New Trip
+                  </Heading>
+                  <Text fontSize="sm" color="gray.600" fontFamily="mono">
+                    plan your next adventure
+                  </Text>
+                </Box>
 
+                {/* Existing Trip Cards */}
+                {trips.map((trip) => (
+                  <TripCard
+                    key={trip.id}
+                    imageSrc={trip.image}
+                    title={trip.title}
+                  />
+                ))}
+              </SimpleGrid>
+            </VStack>
+          </Box>
+        </Flex>
       <TripForm isOpen={open} onClose={onClose} />
     </Box>
   );

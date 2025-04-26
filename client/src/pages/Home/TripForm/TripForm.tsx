@@ -7,6 +7,7 @@ import {
   Text,
   Stack,
   CloseButton,
+  HStack,
 } from '@chakra-ui/react';
 
 interface TripFormProps {
@@ -14,20 +15,30 @@ interface TripFormProps {
   onClose: () => void;
 }
 
+interface FormData {
+  startLocation: string;
+  endLocation: string;
+  startTime: string;
+  endTime: string;
+  passengers: number;
+  activities: string[];
+  budget: string;
+}
+
 export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     startLocation: '',
     endLocation: '',
     startTime: '',
     endTime: '',
     passengers: 1,
-    activities: [] as string[],
+    activities: [],
     budget: '',
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev: FormData) => ({
       ...prev,
       [name]: value
     }));
@@ -71,15 +82,16 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
           top="8px"
           onClick={onClose}
         />
-        <Heading size="lg" color="black" mb={6}>
+        <Heading size="xl" color="cyan.600" mb={6}>
           Plan Your Trip
         </Heading>
         <form onSubmit={handleSubmit}>
           <Stack gap={4} align="stretch">
             <Box>
-              <Text mb={2} color="black">Start Location</Text>
+              <Text mb={2} color="black" fontFamily="mono">Start Location</Text>
               <Input
                 name="startLocation"
+                fontFamily="mono"
                 value={formData.startLocation}
                 onChange={handleInputChange}
                 placeholder="Enter start location"
@@ -88,9 +100,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2}>End Location</Text>
+              <Text mb={2} fontFamily="mono">End Location</Text>
               <Input
                 name="endLocation"
+                fontFamily="mono"
                 value={formData.endLocation}
                 onChange={handleInputChange}
                 placeholder="Enter end location"
@@ -99,9 +112,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2}>Start Time</Text>
+              <Text mb={2} fontFamily="mono">Start Time</Text>
               <Input
                 name="startTime"
+                fontFamily="mono"
                 type="datetime-local"
                 value={formData.startTime}
                 onChange={handleInputChange}
@@ -110,9 +124,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2}>End Time</Text>
+              <Text mb={2} fontFamily="mono">End Time</Text>
               <Input
                 name="endTime"
+                fontFamily="mono"
                 type="datetime-local"
                 value={formData.endTime}
                 onChange={handleInputChange}
@@ -121,9 +136,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2}>Number of Passengers</Text>
+              <Text mb={2} fontFamily="mono">Number of Passengers</Text>
               <Input
                 name="passengers"
+                fontFamily="mono"
                 type="number"
                 min={1}
                 max={10}
@@ -134,7 +150,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2}>Activities</Text>
+              <Text mb={2} fontFamily="mono">Activities</Text>
               <Stack gap={2}>
                 <Box>
                   <input
@@ -146,10 +162,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       const newActivities = e.target.checked
                         ? [...formData.activities, e.target.value]
                         : formData.activities.filter(a => a !== e.target.value);
-                      setFormData(prev => ({ ...prev, activities: newActivities }));
+                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="shopping"> Shopping</label>
+                  <label htmlFor="shopping" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Shopping</label>
                 </Box>
                 <Box>
                   <input
@@ -161,10 +177,10 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       const newActivities = e.target.checked
                         ? [...formData.activities, e.target.value]
                         : formData.activities.filter(a => a !== e.target.value);
-                      setFormData(prev => ({ ...prev, activities: newActivities }));
+                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="activities"> Activities</label>
+                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Activities</label>
                 </Box>
                 <Box>
                   <input
@@ -176,24 +192,34 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       const newActivities = e.target.checked
                         ? [...formData.activities, e.target.value]
                         : formData.activities.filter(a => a !== e.target.value);
-                      setFormData(prev => ({ ...prev, activities: newActivities }));
+                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="food"> Food</label>
+                  <label htmlFor="food" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Food</label>
                 </Box>
               </Stack>
             </Box>
 
             <Box>
-              <Text mb={2}>Budget ($)</Text>
-              <Input
-                name="budget"
-                type="number"
-                value={formData.budget}
-                onChange={handleInputChange}
-                placeholder="Enter your budget"
-                required
-              />
+              <Text mb={2} fontFamily="mono">Budget</Text>
+              <HStack gap={2}>
+                {[1, 2, 3, 4].map((level) => (
+                  <Button
+                    key={level}
+                    variant="outline"
+                    colorScheme="cyan"
+                    bg={formData.budget === level.toString() ? 'cyan.600' : 'gray.50'}
+                    color={formData.budget === level.toString() ? 'white' : 'cyan.600'}
+                    _hover={{
+                      bg: formData.budget === level.toString() ? 'cyan.600' : 'cyan.50'
+                    }}
+                    onClick={() => setFormData((prev: FormData) => ({ ...prev, budget: level.toString() }))}
+                    fontFamily="mono"
+                  >
+                    {'$'.repeat(level)}
+                  </Button>
+                ))}
+              </HStack>
             </Box>
 
             <Button
@@ -201,7 +227,18 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               colorScheme="cyan"
               size="lg"
               width="full"
-              mt={6}
+              mt={4}
+              fontSize="xl"
+              fontFamily="mono"
+              color="white"
+              bg="cyan.600"
+              h="50px"
+              boxShadow="sm"
+              _hover={{
+                transform: 'translateY(-2px)',
+                bg: 'cyan.700'
+              }}
+              transition="all 0.2s"
             >
               Plan Trip
             </Button>
