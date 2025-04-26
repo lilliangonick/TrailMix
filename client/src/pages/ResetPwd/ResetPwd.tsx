@@ -53,7 +53,7 @@ export const ResetPwd = () => {
               }}
               fontFamily="mono"
               mb={3}>
-              Send email
+              Send Email
             </Button>
 
             <Flex justify="space-between" fontSize="sm" color="gray.600">

@@ -118,13 +118,13 @@ export const Login = () => {
             <Flex justify="space-between" fontSize="sm" color="gray.600">
               <Text fontFamily="mono">
                 Forgot password?{' '}
-                <ChakraLink color="blue.400" href="#">
+                <ChakraLink color="blue.400" href="/resetpwd">
                   Reset
                 </ChakraLink>
               </Text>
               <Text fontFamily="mono">
                 New here?{' '}
-                <ChakraLink as={RouterLink} to="/signup" color="blue.400">
+                <ChakraLink href='/signup' color="blue.400">
                   Sign up
                 </ChakraLink>
               </Text>
