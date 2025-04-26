@@ -105,7 +105,7 @@ export const Signup = () => {
                 _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
               />
               <Input
-                type="password2"
+                type="password"
                 placeholder="Re-type your password"
                 variant="flushed"
                 borderBottom="1px dashed"

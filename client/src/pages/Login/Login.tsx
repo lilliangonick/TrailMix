@@ -9,7 +9,6 @@ import {
   Button,
   Text,
   VStack,
-  Image,
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
@@ -20,6 +19,7 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+
 
 
   const handleLogin = async () => {
