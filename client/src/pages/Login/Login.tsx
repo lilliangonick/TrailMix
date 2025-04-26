@@ -15,24 +15,24 @@ import { Link as RouterLink } from 'react-router-dom';
 
 export const Login = () => {
   return (
-    <Flex minH="100vh" minW="100vw" align="center" justify="center" bg="gray.50" p={6}>
-      <VStack align="stretch">
-        <Heading
-              as="h1"
-              size="lg"
-              textAlign="center"
-              color="cyan.600"
-              mb={10}
-            >
-              trailmix
-        </Heading>
+    <Flex minH="100vh" minW="100vw" align="center" justify="center" bg="green.100" p={6}>
         <Box
           w="lg"
           maxW="lg"
           bg="gray.50/50"
-          p={10}
+          p={14}
           borderRadius="sm"
         >
+          <VStack align="stretch">
+          <Heading
+                as="h1"
+                size="lg"
+                textAlign="center"
+                color="cyan.600"
+                mb={10}
+              >
+                trailmix
+          </Heading>
             <VStack align="stretch" mb={3}>
               <Input
                 type="email"
@@ -41,6 +41,7 @@ export const Login = () => {
                 borderBottom="1px dashed"
                 borderColor="gray.400"
                 fontFamily="mono"
+                _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
               />
               <Input
                 type="password"
@@ -49,6 +50,7 @@ export const Login = () => {
                 borderBottom="1px dashed"
                 borderColor="gray.400"
                 fontFamily="mono"
+                _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
               />
             </VStack>
 
@@ -77,8 +79,8 @@ export const Login = () => {
                 </ChakraLink>
               </Text>
             </Flex>
+          </VStack>
         </Box>
-      </VStack>
     </Flex>
   );
 };
