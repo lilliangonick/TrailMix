@@ -31,7 +31,7 @@ export const Login = () => {
                 color="cyan.600"
                 mb={10}
               >
-                trailmix
+                Trailmix
           </Heading>
             <VStack align="stretch" mb={3}>
               <Input
