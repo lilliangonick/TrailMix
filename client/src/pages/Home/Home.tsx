@@ -12,10 +12,26 @@ import { Link as RouterLink } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import TripCard from './TripCard/TripCard';
 import TripForm from './TripForm/TripForm';
+import TripDetails from './TripDetails/TripDetails';
+
+interface Trip {
+  id: number;
+  title: string;
+  image: string;
+  startLocation?: string;
+  endLocation?: string;
+  startTime?: string;
+  endTime?: string;
+  passengers?: number;
+  activities?: string[];
+  budget?: string;
+}
 
 export const Home = () => {
-  const { open, onOpen, onClose } = useDisclosure();
-  const [trips, setTrips] = useState([
+  const { open: isFormOpen, onOpen: onFormOpen, onClose: onFormClose } = useDisclosure();
+  const { open: isDetailsOpen, onOpen: onDetailsOpen, onClose: onDetailsClose } = useDisclosure();
+  const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
+  const [trips, setTrips] = useState<Trip[]>([
     {
       id: 1,
       title: "Yosemite",
@@ -23,9 +39,23 @@ export const Home = () => {
     },
   ]);
 
+  const handleTripClick = (trip: Trip) => {
+    setSelectedTrip(trip);
+    onDetailsOpen();
+  };
+
   return (
     <Box minH='100vh' minW='100vw'>
-      <Navbar/>        
+      <Navbar/>
+      <VStack>
+        <Heading
+          as="h1"
+          size="lg"
+          textAlign="center"
+          color="cyan.600"
+        >
+          My Trips
+        </Heading>
         <Flex 
           minH="100vh" 
           minW="100vw" 
@@ -36,7 +66,6 @@ export const Home = () => {
           bgRepeat="no-repeat" 
           p={6}
         >
-
           <Box
             w="full"
             maxW="6xl"
@@ -47,7 +76,7 @@ export const Home = () => {
                 {/* Start New Trip Card */}
                 <Box
                   as="button"
-                  onClick={onOpen}
+                  onClick={onFormOpen}
                   w="300px"
                   h="375px"
                   bg="white/50"
@@ -76,13 +105,23 @@ export const Home = () => {
                     key={trip.id}
                     imageSrc={trip.image}
                     title={trip.title}
+                    onClick={() => handleTripClick(trip)}
+                    trip={trip}
                   />
                 ))}
               </SimpleGrid>
             </VStack>
           </Box>
         </Flex>
-      <TripForm isOpen={open} onClose={onClose} />
+      </VStack>
+      <TripForm isOpen={isFormOpen} onClose={onFormClose} />
+      {selectedTrip && (
+        <TripDetails 
+          isOpen={isDetailsOpen} 
+          onClose={onDetailsClose} 
+          trip={selectedTrip} 
+        />
+      )}
     </Box>
   );
 };

@@ -211,7 +211,8 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                     bg={formData.budget === level.toString() ? 'cyan.600' : 'gray.50'}
                     color={formData.budget === level.toString() ? 'white' : 'cyan.600'}
                     _hover={{
-                      bg: formData.budget === level.toString() ? 'cyan.600' : 'cyan.50'
+                      bg: formData.budget === level.toString() ? 'cyan.600' : 'cyan.50',
+                      border: '0px'
                     }}
                     onClick={() => setFormData((prev: FormData) => ({ ...prev, budget: level.toString() }))}
                     fontFamily="mono"
@@ -230,6 +231,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               mt={4}
               fontSize="xl"
               fontFamily="mono"
+              border="0px"
               color="white"
               bg="cyan.600"
               h="50px"

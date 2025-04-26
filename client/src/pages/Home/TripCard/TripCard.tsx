@@ -5,18 +5,30 @@ interface TripCardProps {
   imageSrc: string;
   title: string;
   onClick?: () => void;
+  trip: {
+    id: number;
+    title: string;
+    image: string;
+    startLocation?: string;
+    endLocation?: string;
+    startTime?: string;
+    endTime?: string;
+    passengers?: number;
+    activities?: string[];
+    budget?: string;
+  };
 }
 
-const TripCard: React.FC<TripCardProps> = ({ imageSrc, title, onClick }) => (
+const TripCard: React.FC<TripCardProps> = ({ imageSrc, title, onClick, trip }) => (
   <Box
     w="300px"
-    h="375px" // 4:5 aspect ratio (300 * 1.25)
+    h="375px"
     borderWidth="1px"
     borderRadius="lg"
     overflow="hidden"
-    cursor={onClick ? 'pointer' : 'default'}
+    cursor="pointer"
     onClick={onClick}
-    _hover={onClick ? { boxShadow: 'lg' } : undefined}
+    _hover={{ transform: 'scale(1.02)', transition: 'transform 0.2s' }}
     position="relative"
   >
     <Image
@@ -34,7 +46,7 @@ const TripCard: React.FC<TripCardProps> = ({ imageSrc, title, onClick }) => (
       p="4"
       bg="linear-gradient(to top, rgba(0,0,0,0.7), transparent)"
     >
-      <Text fontWeight="bold" fontSize="lg" color="white">
+      <Text fontWeight="bold" fontSize="lg" color="white" fontFamily="mono">
         {title}
       </Text>
     </Box>
