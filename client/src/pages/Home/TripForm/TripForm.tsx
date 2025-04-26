@@ -172,7 +172,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                     type="checkbox"
                     id="activities"
                     name="activities"
-                    value="activities"
+                    value="nature"
                     onChange={(e) => {
                       const newActivities = e.target.checked
                         ? [...formData.activities, e.target.value]
@@ -180,7 +180,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Activities</label>
+                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Nature</label>
                 </Box>
                 <Box>
                   <input
