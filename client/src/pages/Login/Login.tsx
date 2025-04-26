@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 import {
   Box,
@@ -41,6 +39,7 @@ export const Login = () => {
       if (response.ok) {
         console.log('Login succesful')
         localStorage.setItem('token', data.token); 
+        navigate('/home');
       } else {
         console.log(data.message)
         setErrorMessage(data.message || 'Invalid credentials');
