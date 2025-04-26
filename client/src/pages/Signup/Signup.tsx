@@ -1,5 +1,6 @@
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   Box,
   Flex,
@@ -20,6 +21,7 @@ export const Signup = () => {
   const [retypePassword, setRetypePassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     try {
@@ -43,6 +45,7 @@ export const Signup = () => {
         setEmail('');
         setPassword('');
         setRetypePassword('');
+        navigate('/home');
       }
     } catch (err) {
       setError('Server error. Please try again later.');
