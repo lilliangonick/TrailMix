@@ -19,6 +19,7 @@ import { Link as RouterLink } from 'react-router-dom';
 export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
 
@@ -41,10 +42,12 @@ export const Login = () => {
         localStorage.setItem('token', data.token); 
       } else {
         console.log(data.message)
+        setErrorMessage(data.message || 'Invalid credentials');
       }
 
     } catch (error) {
       console.error('Login error:', error);
+      setErrorMessage('Server error. Please try again later.');
     }
   }
 
@@ -93,6 +96,12 @@ export const Login = () => {
                 _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
               />
             </VStack>
+            
+            {errorMessage && (
+            <Text color="red.500" fontSize="sm" mb={2} fontFamily="mono">
+              {errorMessage}
+            </Text>
+          )}
 
             <Button bg="cyan.600" 
               width="full" 
