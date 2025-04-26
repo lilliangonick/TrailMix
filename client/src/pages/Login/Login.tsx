@@ -11,10 +11,11 @@ import {
   Button,
   Text,
   VStack,
+  Image,
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-
+import bg from '../../assets/trailmixbg.png';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -52,11 +53,18 @@ export const Login = () => {
   }
 
   return (
-    <Flex minH="100vh" minW="100vw" align="center" justify="center" bg="green.100" p={6}>
+    <Flex minH="100vh"
+      minW="100vw" 
+      align="center" 
+      justify="center" 
+      bgImage={`url(${bg})`} 
+      bgPos="center top"
+      bgRepeat="no-repeat"
+      p={6}>
         <Box
           w="lg"
           maxW="lg"
-          bg="gray.50/50"
+          bg="gray.50/77"
           p={14}
           borderRadius="sm"
         >
