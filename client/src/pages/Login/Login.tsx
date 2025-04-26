@@ -1,11 +1,3 @@
-// import { Heading } from "@chakra-ui/react"
-
-
-// export const Login = () => {
-//   return (
-//     <Heading>I'm a Heading</Heading>
-//   )
-// }
 
 import React from 'react';
 import {
