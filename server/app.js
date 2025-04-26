@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 
+app.get('/api/places/hello', (_req, res) => {
+  res.send('Hello from /api/places!');
+});
+
 // middleware 
 app.use(cors());
 app.use(express.json());
@@ -41,3 +45,5 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+const placeRoutes = require('./routes/places');
+app.use('/api/places', placeRoutes);
