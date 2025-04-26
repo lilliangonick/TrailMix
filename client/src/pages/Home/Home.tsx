@@ -11,7 +11,6 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import bg from '../../assets/trailmixbg.png';
 import Navbar from './Navbar/Navbar';
 import TripCard from './TripCard/TripCard';
 
@@ -25,7 +24,7 @@ export const Home = () => {
         minW="100vw" 
         align="center" 
         justify="center" 
-        bgImage={`url(${bg})`} 
+        bgImage={`url('/assets/trailmixbg.png')`} 
         bgPos="center top"
         bgRepeat="no-repeat" 
         p={6}>
@@ -37,7 +36,7 @@ export const Home = () => {
             borderRadius="sm"
             >
                 <VStack align="stretch">
-                    <TripCard imageSrc='../../../assets/yosemite.jpg' title="trip {1}" />
+                    <TripCard imageSrc='/assets/yosemite.jpg' title="trip {1}" />
                 </VStack>
             </Box>
         </Flex>

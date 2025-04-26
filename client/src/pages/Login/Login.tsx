@@ -12,7 +12,6 @@ import {
   Link as ChakraLink,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import bg from '../../assets/trailmixbg.png';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -56,7 +55,7 @@ export const Login = () => {
       minW="100vw" 
       align="center" 
       justify="center" 
-      bgImage={`url(${bg})`} 
+      bgImage={`url('/assets/trailmixbg.png')`} 
       bgPos="center top"
       bgRepeat="no-repeat"
       p={6}>

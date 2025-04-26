@@ -25,7 +25,7 @@ const TripCard: React.FC<TripCardProps> = ({ imageSrc, title, onClick }) => (
       h="200px"
     />
     <Box p="4">
-      <Text fontWeight="bold" fontSize="lg" noOfLines={1}>
+      <Text fontWeight="bold" fontSize="lg">
         {title}
       </Text>
     </Box>
