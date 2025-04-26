@@ -13,7 +13,7 @@ import {
 import { Link as RouterLink } from 'react-router-dom';
 
 
-export const Signup = () => {
+export const ResetPwd = () => {
   return (
     <Flex minH="100vh" minW="100vw" align="center" justify="center" bg="green.100" p={6}>
         <Box
@@ -43,24 +43,6 @@ export const Signup = () => {
                 fontFamily="mono"
                 _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
               />
-              <Input
-                type="password"
-                placeholder="Password"
-                variant="flushed"
-                borderBottom="1px dashed"
-                borderColor="gray.400"
-                fontFamily="mono"
-                _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
-              />
-              <Input
-                type="password2"
-                placeholder="Re-type your password"
-                variant="flushed"
-                borderBottom="1px dashed"
-                borderColor="gray.400"
-                fontFamily="mono"
-                _focus={{ boxShadow: "none", borderBottom: "2px dashed", borderColor: "gray.400" }}
-              />
             </VStack>
 
             <Button bg="cyan.600" 
@@ -71,7 +53,7 @@ export const Signup = () => {
               }}
               fontFamily="mono"
               mb={3}>
-              Sign Up
+              Send email
             </Button>
 
             <Flex justify="space-between" fontSize="sm" color="gray.600">
@@ -88,4 +70,4 @@ export const Signup = () => {
   );
 };
 
-export default Signup;
+export default ResetPwd;
