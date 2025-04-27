@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Heading,
@@ -7,8 +7,13 @@ import {
   Stack,
   CloseButton,
   HStack,
+  Input,
+  IconButton,
+  VStack,
 } from '@chakra-ui/react';
 import { LocationInput } from './LocationInput/LocationInput'; // Make sure you have this file
+import { DeleteIcon } from '@chakra-ui/icons';
+import { useDebounce } from '../../../hooks/useDebounce';
 
 interface TripFormProps {
   isOpen: boolean;
@@ -23,6 +28,7 @@ interface FormData {
   passengers: number;
   activities: string[];
   budget: string;
+  additionalUsers: string[];
 }
 
 export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
@@ -34,13 +40,103 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
     passengers: 1,
     activities: [],
     budget: '',
+    additionalUsers: [],
   });
+
+  const [newUserEmail, setNewUserEmail] = useState('');
+  const [emailValidation, setEmailValidation] = useState<{
+    isValid: boolean;
+    message: string;
+    checking: boolean;
+  }>({
+    isValid: false,
+    message: '',
+    checking: false,
+  });
+
+  const debouncedEmail = useDebounce(newUserEmail, 500);
+
+  useEffect(() => {
+    const validateEmail = async () => {
+      if (!debouncedEmail) {
+        setEmailValidation({
+          isValid: false,
+          message: '',
+          checking: false,
+        });
+        return;
+      }
+
+      // Basic email format validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(debouncedEmail)) {
+        setEmailValidation({
+          isValid: false,
+          message: 'Please enter a valid email address',
+          checking: false,
+        });
+        return;
+      }
+
+      setEmailValidation(prev => ({ ...prev, checking: true }));
+
+      try {
+        const response = await fetch(`http://localhost:4000/api/users/check/${encodeURIComponent(debouncedEmail)}`);
+        const data = await response.json();
+
+        if (data.exists) {
+          setEmailValidation({
+            isValid: true,
+            message: 'User found',
+            checking: false,
+          });
+        } else {
+          setEmailValidation({
+            isValid: false,
+            message: 'User not found',
+            checking: false,
+          });
+        }
+      } catch (error) {
+        console.error('Error checking user:', error);
+        setEmailValidation({
+          isValid: false,
+          message: 'Error checking user',
+          checking: false,
+        });
+      }
+    };
+
+    validateEmail();
+  }, [debouncedEmail]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: name === 'passengers' ? Number(value) : value,
+    }));
+  };
+
+  const handleAddUser = () => {
+    if (newUserEmail && formData.additionalUsers.length < 10 && emailValidation.isValid) {
+      setFormData(prev => ({
+        ...prev,
+        additionalUsers: [...prev.additionalUsers, newUserEmail]
+      }));
+      setNewUserEmail('');
+      setEmailValidation({
+        isValid: false,
+        message: '',
+        checking: false,
+      });
+    }
+  };
+
+  const handleRemoveUser = (index: number) => {
+    setFormData(prev => ({
+      ...prev,
+      additionalUsers: prev.additionalUsers.filter((_, i) => i !== index)
     }));
   };
 
@@ -62,22 +158,27 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       formData.activities.includes('nature') ? 'explorer' :
                       formData.activities.includes('shopping') ? 'shopper' : 'explorer';
 
+      const tripData = {
+        startLocation: formData.startLocation,
+        endLocation: formData.endLocation,
+        budget: formData.budget.toString(),
+        tripVibe,
+        startDate: new Date(formData.startDate).toISOString(),
+        endDate: new Date(formData.endDate).toISOString(),
+        passengers: formData.passengers,
+        activities: formData.activities,
+        additionalUsers: formData.additionalUsers
+      };
+
+      console.log('Submitting trip data:', tripData);
+
       const response = await fetch('http://localhost:4000/api/trips', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({
-          startLocation: formData.startLocation,
-          endLocation: formData.endLocation,
-          budget: formData.budget.toString(),
-          tripVibe,
-          startDate: new Date(formData.startDate).toISOString(),
-          endDate: new Date(formData.endDate).toISOString(),
-          passengers: formData.passengers,
-          activities: formData.activities
-        })
+        body: JSON.stringify(tripData)
       });
 
       if (!response.ok) {
@@ -201,25 +302,76 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             {/* Number of Passengers */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Number of Passengers</Text>
-              <input
+              <Input
                 type="number"
                 name="passengers"
-                color="black"
-                min={1}
-                max={10}
                 value={formData.passengers}
                 onChange={handleInputChange}
-                style={{ 
-                  fontFamily: 'Space Mono', 
-                  padding: '10px', 
-                  borderRadius: '6px', 
-                  border: '1px solid lightgray', 
-                  width: '100%',
-                  backgroundColor: 'white',
-                  color: 'black'
-                }}
-                required
+                min="1"
+                max="10"
+                fontFamily="mono"
               />
+            </Box>
+
+            {/* Additional Users */}
+            <Box>
+              <Text mb={2} color="black" fontFamily="mono" fontSize="sm">Additional Users (Optional)</Text>
+              <HStack>
+                <Input
+                  type="email"
+                  value={newUserEmail}
+                  onChange={(e) => setNewUserEmail(e.target.value)}
+                  placeholder="Enter email address"
+                  fontFamily="mono"
+                  size="sm"
+                />
+                <Button
+                  onClick={handleAddUser}
+                  disabled={!newUserEmail || formData.additionalUsers.length >= 10 || !emailValidation.isValid}
+                  bg="gray.600"
+                  color="white"
+                  _hover={{ bg: 'gray.700' }}
+                  px={3}
+                  py={1}
+                  fontFamily="mono"
+                  size="sm"
+                >
+                  Add
+                </Button>
+              </HStack>
+              {emailValidation.message && (
+                <Text 
+                  fontSize="xs" 
+                  mt={1} 
+                  color={emailValidation.isValid ? 'green.500' : 'red.500'}
+                >
+                  {emailValidation.checking ? 'Checking...' : emailValidation.message}
+                </Text>
+              )}
+              {formData.additionalUsers.length > 0 && (
+                <VStack align="stretch" mt={2} gap={1}>
+                  {formData.additionalUsers.map((email, index) => (
+                    <HStack key={index} justify="space-between" gap={2}>
+                      <Text fontFamily="mono" fontSize="sm">{email}</Text>
+                      <Button
+                        size="xs"
+                        variant="ghost"
+                        colorScheme="red"
+                        onClick={() => handleRemoveUser(index)}
+                        fontFamily="mono"
+                        px={2}
+                      >
+                        Remove
+                      </Button>
+                    </HStack>
+                  ))}
+                </VStack>
+              )}
+              {formData.additionalUsers.length >= 10 && (
+                <Text color="red.500" fontSize="xs" mt={1}>
+                  Maximum 10 additional users reached
+                </Text>
+              )}
             </Box>
 
             {/* Activities */}
