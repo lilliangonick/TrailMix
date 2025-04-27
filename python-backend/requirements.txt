@@ -2,3 +2,8 @@ Flask
 Flask-Cors
 python-dotenv
 pymongo
+requests
+google-generativeai
+uagents
+pydantic
+polyline

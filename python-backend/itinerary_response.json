@@ -1,0 +1,1324 @@
+{
+  "itinerary": {
+    "_id": "680d848f57ddec16e9e59cd4",
+    "budget": "2",
+    "created_at": "2025-04-26T18:12:47.857818",
+    "days": [
+      {
+        "date": "2025-05-03",
+        "day_number": 1,
+        "narrative": "Get ready for a day of culinary delights and magical entertainment! Day 1 kicks off with a tasting tour of highly-rated foodie gems like Mad 4 Madeleines, Gaufre it!, Latitude 15 Pop-Up, and Boochmania, before culminating in an enchanting evening at the San Francisco Magic Theater At The Marrakech.  Prepare to be amazed!\n",
+        "route": {
+          "destination": {
+            "address": "103 Horne Ave, San Francisco, CA 94124, USA",
+            "location": {
+              "lat": 37.7274195,
+              "lng": -122.3647918
+            }
+          },
+          "distance": {
+            "text": "4.3 mi",
+            "value": 6896
+          },
+          "duration": {
+            "text": "14 mins",
+            "value": 822
+          },
+          "origin": {
+            "address": "Mississippi St at 17th St, San Francisco, CA 94107, USA",
+            "location": {
+              "lat": 37.7648348,
+              "lng": -122.3948253
+            }
+          },
+          "polyline": "e}neFtf`jVfCM`@CI_D@kCr@IlC[zFo@NUXAvDUxDOpDEzCBlCBhC?jCMh@J~CYfC[nAI~@A\\HXPHTFTBZ@JXCzAGAo@E}AGgAAoAQcHQcHCoA|@EdEStFK~I]jMi@~DUhADbEdA|@Xd@J~Bj@THNc@`@{@bAsBdBoDtHePpBiEdCmFzA{CH]hAmCdAqBtAyChAaCNSnAu@n@]dAe@h@O`@Cp@DtE\\^FXPLRXQJCj@DZ?TCf@OXKl@sArAiCvBuEvBsEzE_Kh@kAd@mAp@wAj@iA{BmBsBoBrAuC`BqDR_@bAiBhAqBf@iA?Ec@e@QMaA{@EO?A?CRa@FWJsCJeB|AlAx@t@tBhBzE|DR^Pd@LfAS?a@W_Aw@WK]I}@GZ}@@YCMIIeByAGGFFdBxAHHBLAX[|@|@Fj@N\\V`Av@JDR?MgAQe@S_@e@_@kHgGy@u@}AmAKdBI~BARGVSb@?@ADFJRPXVXVn@l@?DITw@|Ao@fAcAhBmAhC{B|ErBnBzBlB}A`De@lAg@fAGJqFhLeDbHaC|Em@rAYJQFk@Jo@AWCKBYPMSYQ_BOiDYi@?e@FYHa@P{@b@WLoAt@ORw@dBcArBc@`AeApBiAlC]HMP{CjG}EhKERQ^cApBgBpDeDfHeB|DO`@@RGVg@dA{@fBiGpMc@bAu@vAOd@KL_ApB{@jBu@zAgBxDeAzBYn@M\\W`@MLQHmDpAaE|AGB_A\\FdCVdKNlGFbC?dA?ZKNCXGnA?x@JbAZbBRbBd@rETtBNp@Fl@l@bCJh@PhADpAAx@@vC?`@eFTmHZQ?yAJaFTgEPkQv@mDNaI\\IqDs@Pc@FkBHeKd@cFToERqJb@uCJ{EVwCJmBNWAY]s@}@{CeEi@u@_GcIeCgD}CGq@Gg@I{@[u@a@kBsAmAmAaAiAI[kAaBu@qA{BeFiCgGo@wA_@o@a@q@EYWg@uBqDa@y@[u@M{@Eq@Mi@AQe@u@iBcC_@i@{CgEwDdFq@|@MPU]KMKOMOLNJLJNT\\MPu@bAoCpDwAnBsCxDcCbD_FvGiCnDONy@J[@g@DD^HtATbDLvBZzEjAxQv@jLb@vGxDc@]eF",
+          "steps": [
+            {
+              "distance": {
+                "text": "315 ft",
+                "value": 96
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 17
+              },
+              "end_location": {
+                "lat": 37.7639777,
+                "lng": -122.3947414
+              },
+              "html_instructions": "Head <b>south</b> on <b>Mississippi St</b> toward <b>Mariposa St</b>",
+              "polyline": {
+                "points": "e}neFtf`jVn@EPA`@Ab@CJATA"
+              },
+              "start_location": {
+                "lat": 37.7648348,
+                "lng": -122.3948253
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "433 ft",
+                "value": 132
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 28
+              },
+              "end_location": {
+                "lat": 37.764015,
+                "lng": -122.3932395
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Mariposa St</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "{wneFbf`jVGcCA[@c@?gB"
+              },
+              "start_location": {
+                "lat": 37.7639777,
+                "lng": -122.3947414
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.6 mi",
+                "value": 903
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 58
+              },
+              "end_location": {
+                "lat": 37.7559646,
+                "lng": -122.3924396
+              },
+              "html_instructions": "Turn <b>right</b> to merge onto <b>I-280 S</b>",
+              "maneuver": "ramp-right",
+              "polyline": {
+                "points": "cxneFv|_jVh@GHARCr@IdAMB?bAKn@Ir@I|@KNC@??ANSB?TAFAZAjBMf@CD?JA`@CD?p@CTAPAd@A^AdAAr@AV?R?~@@J?z@@b@?D?H?D?P@R?^?L@jA?|@?xAGp@E"
+              },
+              "start_location": {
+                "lat": 37.764015,
+                "lng": -122.3932395
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 mi",
+                "value": 345
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 28
+              },
+              "end_location": {
+                "lat": 37.753146,
+                "lng": -122.3927251
+              },
+              "html_instructions": "Take the exit toward <b>25th St</b>/<wbr/><b>C Chaves St</b>",
+              "maneuver": "ramp-right",
+              "polyline": {
+                "points": "wemeFvw_jV^JB?B?@?l@EF?VEB?ZEHAb@EB?@ApAO`@GPAJALAB?p@EF?@?@?JAF?J?D?L?@?H@HBFBDBRLBFDLBH@B?B@B@N@J@J"
+              },
+              "start_location": {
+                "lat": 37.7559646,
+                "lng": -122.3924396
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "217 ft",
+                "value": 66
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 12
+              },
+              "end_location": {
+                "lat": 37.7525555,
+                "lng": -122.3926729
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Pennsylvania Ave</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "etleFpy_jVXCzAG"
+              },
+              "start_location": {
+                "lat": 37.753146,
+                "lng": -122.3927251
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.3 mi",
+                "value": 423
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 65
+              },
+              "end_location": {
+                "lat": 37.7528547,
+                "lng": -122.3878827
+              },
+              "html_instructions": "Turn <b>left</b> at the 1st cross street onto <b>25th St</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "opleFdy_jVAo@?CEyA?IEc@AI?OAC?C?U?i@?C?A?AAs@Ck@Ay@CaAAO?IAe@AGAwAGeBCeAC_@Ag@Ag@"
+              },
+              "start_location": {
+                "lat": 37.7525555,
+                "lng": -122.3926729
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.7 mi",
+                "value": 1128
+              },
+              "duration": {
+                "text": "3 mins",
+                "value": 156
+              },
+              "end_location": {
+                "lat": 37.7428118,
+                "lng": -122.3880061
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>3rd St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "irleFf{~iVTAf@CJ?dAI|@Ct@Ef@Al@AxACdACR?f@CF?TAjDORAZAh@CPAb@C|@C|@EfBIlAG|@Ed@AXCdAI~@E^AP?H?\\BN@RDl@Nx@RfAZp@TJBPBRFTFRDv@R\\H"
+              },
+              "start_location": {
+                "lat": 37.7528547,
+                "lng": -122.3878827
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.7 mi",
+                "value": 1171
+              },
+              "duration": {
+                "text": "2 mins",
+                "value": 137
+              },
+              "end_location": {
+                "lat": 37.7366345,
+                "lng": -122.3773766
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Evans Ave</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "qsjeF`|~iVTHNc@LWRc@JOb@_ADILYf@gAXk@JQVi@DIj@oAt@_Bj@oAj@mAx@gBb@_AVe@N_@JSN]Ra@DKb@}@DI@ALYDIl@qADKBEHSLW`@y@DKHQP[Vg@FMFKN[@C@C@C@GBMXo@n@}Al@oAVa@Vg@JYVg@Xo@@?N[^y@Vk@DIHILK"
+              },
+              "start_location": {
+                "lat": 37.7428118,
+                "lng": -122.3880061
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 mi",
+                "value": 351
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 26
+              },
+              "end_location": {
+                "lat": 37.7336499,
+                "lng": -122.3771443
+              },
+              "html_instructions": "Slight <b>right</b> onto <b>Hunters Point Blvd</b>",
+              "maneuver": "turn-slight-right",
+              "polyline": {
+                "points": "}lieFry|iV`Ai@VMPKDCDA\\QRKLELEJCHCDAHAJ?HA@?J?P@L@D@H?XBD@fAHZDF?v@DF@LBPBHBNLLR"
+              },
+              "start_location": {
+                "lat": 37.7366345,
+                "lng": -122.3773766
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "377 ft",
+                "value": 115
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 10
+              },
+              "end_location": {
+                "lat": 37.7326631,
+                "lng": -122.3768968
+              },
+              "html_instructions": "Turn <b>left</b> to stay on <b>Hunters Point Blvd</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "izheFbx|iVXQDADAF?NBD?L@P?H?JAHAJCHCNG@?XK"
+              },
+              "start_location": {
+                "lat": 37.7336499,
+                "lng": -122.3771443
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.5 mi",
+                "value": 729
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 64
+              },
+              "end_location": {
+                "lat": 37.7288404,
+                "lng": -122.3701629
+              },
+              "html_instructions": "Slight <b>left</b> onto <b>Innes Ave</b>",
+              "maneuver": "turn-slight-left",
+              "polyline": {
+                "points": "ctheFrv|iVl@sA|@eBTc@FOd@cA|@mBJSh@iAp@wAFMRc@DIb@_ArAsC|@iBTg@BGBC@C?A@ARc@Rc@P_@Rm@p@wARc@Ve@"
+              },
+              "start_location": {
+                "lat": 37.7326631,
+                "lng": -122.3768968
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.1 mi",
+                "value": 166
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 23
+              },
+              "end_location": {
+                "lat": 37.7300444,
+                "lng": -122.3690535
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Donahue St</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "g|geFnl{iVu@o@eA}@mAgAe@g@"
+              },
+              "start_location": {
+                "lat": 37.7288404,
+                "lng": -122.3701629
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.3 mi",
+                "value": 495
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 78
+              },
+              "end_location": {
+                "lat": 37.7285955,
+                "lng": -122.3646876
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Galvez Ave</b><div style=\"font-size:0.9em\">Partial restricted usage road</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "wcheFpe{iVf@iAj@kADI`@}@r@{ADMLWDGVi@j@_ADIh@}@R_@DIBGXk@FO@E?A?CQSQQGECA?AECMMECAAAAUSEEMKEGAC@A?A?A?A?ALWDIBIBM@G?K"
+              },
+              "start_location": {
+                "lat": 37.7300444,
+                "lng": -122.3690535
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "331 ft",
+                "value": 101
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 16
+              },
+              "end_location": {
+                "lat": 37.7284925,
+                "lng": -122.3635421
+              },
+              "html_instructions": "Continue onto <b>Robinson St</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+              "polyline": {
+                "points": "wzgeFhjziVD{ABc@Bq@Fs@"
+              },
+              "start_location": {
+                "lat": 37.7285955,
+                "lng": -122.3646876
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 mi",
+                "value": 321
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 43
+              },
+              "end_location": {
+                "lat": 37.7261135,
+                "lng": -122.3656101
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Fisher St</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "azgeFbcziVt@j@f@`@f@`@PR?@tBfBrBdB`Av@VP"
+              },
+              "start_location": {
+                "lat": 37.7284925,
+                "lng": -122.3635421
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "266 ft",
+                "value": 81
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 8
+              },
+              "end_location": {
+                "lat": 37.725781,
+                "lng": -122.3663949
+              },
+              "html_instructions": "Continue onto <b>Spear Ave</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+              "polyline": {
+                "points": "ekgeF`pziVLLHNHNFLHVD\\Fh@"
+              },
+              "start_location": {
+                "lat": 37.7261135,
+                "lng": -122.3656101
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "466 ft",
+                "value": 142
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 24
+              },
+              "end_location": {
+                "lat": 37.7269464,
+                "lng": -122.3658365
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Horne Ave</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "cigeF|tziVK@GAEAECCCQMWSSQKIGGECCAMEMEOCMCo@C"
+              },
+              "start_location": {
+                "lat": 37.725781,
+                "lng": -122.3663949
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "430 ft",
+                "value": 131
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 29
+              },
+              "end_location": {
+                "lat": 37.7274195,
+                "lng": -122.3647918
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Salt Lick St</b><div style=\"font-size:0.9em\">Restricted usage road</div><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "mpgeFnqziVNa@J[@K?MAGAECCEE]YgA_AGG"
+              },
+              "start_location": {
+                "lat": 37.7269464,
+                "lng": -122.3658365
+              },
+              "travel_mode": "DRIVING"
+            }
+          ]
+        },
+        "venues": [
+          {
+            "category": "restaurants",
+            "id": "wNsOhBi7PQ0Wb53rwkxjWQ",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/xYjn9ammtfK3hcqwu3DwUg/o.jpg",
+            "location": {
+              "address": "",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.7648391723633,
+                "lng": -122.394752502441
+              }
+            },
+            "name": "Mad 4 Madeleines",
+            "price": "$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/mad-4-madeleines-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "restaurants",
+            "id": "nuOUfxS3zEvgksu7xLamcQ",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/h53gsk7jRa2zZkAv5Yli0w/o.jpg",
+            "location": {
+              "address": "110 Robinson St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.727592,
+                "lng": -122.365089
+              }
+            },
+            "name": "Gaufre it!",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/gaufre-it-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "restaurants",
+            "id": "w6igEjgmagwHKGnV4oMciA",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/aiCZ_MRd-vhtp3dm7_VyAw/o.jpg",
+            "location": {
+              "address": "2948 20th St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.7593477,
+                "lng": -122.4106402
+              }
+            },
+            "name": "Latitude 15 Pop-Up",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/latitude-15-pop-up-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "restaurants",
+            "id": "MUsHl4mdVXVvvK_lb4OSYA",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/QHpKa761kpSAaBQlg3Sc7w/o.jpg",
+            "location": {
+              "address": "685 Harrison St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.78269,
+                "lng": -122.3968
+              }
+            },
+            "name": "Boochmania",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/boochmania-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "restaurants",
+            "id": "bqSZc4Xh2o253DZXr5QOmg",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Y4wfk9vqrN7U21LELtgQSA/o.jpg",
+            "location": {
+              "address": "419 O'Farrell St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.785843,
+                "lng": -122.411816
+              }
+            },
+            "name": "San Francisco Magic Theater At The Marrakech",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/san-francisco-magic-theater-at-the-marrakech-san-francisco-2?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          }
+        ]
+      },
+      {
+        "date": "2025-05-04",
+        "day_number": 2,
+        "narrative": "Get ready for a delicious Day 2 fueled by San Francisco's finest foodie finds!  From the perfect wontons at Aya to the decadent madeleines at Mad 4 Madeleines, and with Milkman, Meryienda, and Pastoral Plate rounding out the culinary adventure, this day promises a symphony of flavors and top-notch treats.\n",
+        "route": {
+          "destination": {
+            "address": "Mississippi St at 17th St, San Francisco, CA 94107, USA",
+            "location": {
+              "lat": 37.7648348,
+              "lng": -122.3948253
+            }
+          },
+          "distance": {
+            "text": "0.4 mi",
+            "value": 568
+          },
+          "duration": {
+            "text": "2 mins",
+            "value": 97
+          },
+          "origin": {
+            "address": "1222 20th St, San Francisco, CA 94107, USA",
+            "location": {
+              "lat": 37.76018699999999,
+              "lng": -122.3938616
+            }
+          },
+          "polyline": "e`neFr``jVBdA@X?FaBHk@BmADsER_H\\iMh@mAFa@b@oKrNqBlCw@dA_C`DgCjDw@bAORFHrAnB^d@xAlBZ^JdBBh@BhAGTOh@MHGJANBNFLRVT^BJDn@LfFBRHNPVHLIRqAhBiBbCgDrE}HnK}DjF{FxHsHbK_DfEO^QZGPAPCVRnCHvAHfAf@`HtDc@xEo@b@GTZq@{@q@_ASYNUV]\\e@jAcBfAyA^g@X^v@dArAvATTF^b@n@YFw@P}Cp@}AXqBTiARw@J_ANyC\\_E`@}BZaD\\cJhAaHv@sC\\wIbAwNdBsBV_@DC[AOIqAMwBq@eKW{DcAoOaAkOyBk\\IyAC_@MBG@G@kBRc@FK@Dj@NvB`@pGZ|EbAhO~@hOn@pJbDfg@^|Fn@IfBS~NgBtNaBd@Gl@Kv@Kl@IlBUlH}@xMyAxDc@NIRArBWx@KfBSx@K|IeA~@IlA`BbApAf@l@jA`Bd@h@\\\\bA~Ab@h@f@x@xB|ChAvAFH\\d@b@n@R?R@j@E|DOz@CtEQfFWhDS`HYPxG",
+          "steps": [
+            {
+              "distance": {
+                "text": "151 ft",
+                "value": 46
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 8
+              },
+              "end_location": {
+                "lat": 37.7601554,
+                "lng": -122.3943814
+              },
+              "html_instructions": "Head <b>west</b> on <b>20th St</b> toward <b>Mississippi St</b>",
+              "polyline": {
+                "points": "e`neFr``jVBh@?@?@?B?D?B?B?D@L?B?B?B?B?B"
+              },
+              "start_location": {
+                "lat": 37.76018699999999,
+                "lng": -122.3938616
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.3 mi",
+                "value": 522
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 89
+              },
+              "end_location": {
+                "lat": 37.7648348,
+                "lng": -122.3948253
+              },
+              "html_instructions": "Turn <b>right</b> at the 1st cross street onto <b>Mississippi St</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "_`neFzc`jViAFW@G?E?U@G@E?m@BO@I?a@Bc@@c@BK@W@a@Bc@@M@U@A?A?C?E@[@]BC?C?[@E@cADc@BU@K@G?c@@U@K@c@Ba@@Q@o@D"
+              },
+              "start_location": {
+                "lat": 37.7601554,
+                "lng": -122.3943814
+              },
+              "travel_mode": "DRIVING"
+            }
+          ]
+        },
+        "venues": [
+          {
+            "category": "food",
+            "id": "ywaB3DVYQGI5KNpCRXGfGQ",
+            "image_url": "",
+            "location": {
+              "address": "",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.76017,
+                "lng": -122.39386
+              }
+            },
+            "name": "Aya Wontons",
+            "price": "$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/aya-wontons-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "food",
+            "id": "wNsOhBi7PQ0Wb53rwkxjWQ",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/xYjn9ammtfK3hcqwu3DwUg/o.jpg",
+            "location": {
+              "address": "",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.7648391723633,
+                "lng": -122.394752502441
+              }
+            },
+            "name": "Mad 4 Madeleines",
+            "price": "$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/mad-4-madeleines-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "food",
+            "id": "ngc6yjfKMb68VoP2ffvXwA",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/941-vO7aTpJ9p7C2gAcUHw/o.jpg",
+            "location": {
+              "address": "",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.7749295,
+                "lng": -122.4194155
+              }
+            },
+            "name": "Milkman SF",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/milkman-sf-san-francisco-2?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "food",
+            "id": "eKW8rxXnpDmxFemlSjGNbA",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/WfzXuzqdDY9hy7kL5USxyg/o.jpg",
+            "location": {
+              "address": "",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.79121017,
+                "lng": -122.40795898
+              }
+            },
+            "name": "Meryienda",
+            "price": "$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/meryienda-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "food",
+            "id": "SyUUf-ht9Q4x_zlSE2JoGQ",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/M0JAWtOBjuksUBpf_q6Dtw/o.jpg",
+            "location": {
+              "address": "3669 A 17th St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.76271,
+                "lng": -122.42773
+              }
+            },
+            "name": "Pastoral Plate",
+            "price": "$$",
+            "rating": 5.0,
+            "url": "https://www.yelp.com/biz/pastoral-plate-san-francisco-2?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          }
+        ]
+      },
+      {
+        "date": "2025-05-05",
+        "day_number": 3,
+        "narrative": "Day 3 is all about fueling up with the best of Jakarta's coffee scene.  We'll hop between highly-rated cafes like Golden Goat, Kopiku, and Home Coffee Roasters, savoring the rich aromas and unique brews each spot has to offer. Prepare for a caffeine-fueled adventure!\n",
+        "route": {
+          "destination": {
+            "address": "1439 Lombard St, San Francisco, CA 94123, USA",
+            "location": {
+              "lat": 37.8011594,
+              "lng": -122.4253764
+            }
+          },
+          "distance": {
+            "text": "3.0 mi",
+            "value": 4761
+          },
+          "duration": {
+            "text": "16 mins",
+            "value": 950
+          },
+          "origin": {
+            "address": "388 Brannan St, San Francisco, CA 94107, USA",
+            "location": {
+              "lat": 37.7805564,
+              "lng": -122.3943961
+            }
+          },
+          "polyline": "o_reF~c`jVf@p@gCjDuBtCuJnM}GhJmDvEyG`JW\\OFcAFm@FwDb@gHz@iGt@JxAZ|EHlAb@rGv@pL\\zF|@lM~@nOr@hK`BdWd@rHF|@B\\SBSBoBT}B\\qGt@aKhAkBTaCXgGt@cKlAsJjAeCXa@DA]McBIiAKeBGa@QSEk@AMY_EOoB_@}FOqBUsDCe@x@Ox@IbAMxC]dFo@dIaAzEk@~De@vM}AhEi@|Fs@|De@fBSn@ICYCYQqCS{CG_Ae@aHm@qJ{Bg]_@gF@QG@[F_@DoANe@F?F@H?BDl@R|CHpAf@xHd@~GFfAVE`Dc@rC]nC[~Di@dEe@nEi@bEe@^GIyAGy@HEzCyDvC{Dx@mAnAaBlA_BdBcC~FaIvAmBPUo@{@cAwAqDaFa@i@Ua@l@y@RYDYd@k@p@aAe@o@qD_F_AuAW]c@o@W\\Y^W\\qAfBoCpD{CfE}G`JgCkD_@g@gAyAJM~@oAd@m@",
+          "steps": [
+            {
+              "distance": {
+                "text": "102 ft",
+                "value": 31
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 7
+              },
+              "end_location": {
+                "lat": 37.78035879999999,
+                "lng": -122.3946485
+              },
+              "html_instructions": "Head <b>southwest</b> on <b>Varney Pl</b> toward <b>3rd St</b>",
+              "polyline": {
+                "points": "o_reF~c`jVHHBD?@X^"
+              },
+              "start_location": {
+                "lat": 37.7805564,
+                "lng": -122.3943961
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.7 mi",
+                "value": 1127
+              },
+              "duration": {
+                "text": "4 mins",
+                "value": 259
+              },
+              "end_location": {
+                "lat": 37.7876418,
+                "lng": -122.4034717
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>3rd St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "g~qeFpe`jVo@z@UZSVm@z@CBA@GHUZSZY^QVQTKNMNa@h@e@n@W\\KLMPEHQRMPMPKNi@r@UXEF{AnBW^c@l@W\\ILQTEFW^c@j@ABQTORGFe@n@WZABSVMPWZ[b@SXY^UZSVEF]b@o@|@IL}@jAU\\gAxA_@d@KPEDCBA@CBE@C@A?m@F"
+              },
+              "start_location": {
+                "lat": 37.78035879999999,
+                "lng": -122.3946485
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.3 mi",
+                "value": 457
+              },
+              "duration": {
+                "text": "2 mins",
+                "value": 116
+              },
+              "end_location": {
+                "lat": 37.7917068,
+                "lng": -122.4042561
+              },
+              "html_instructions": "Continue onto <b>Kearny St</b><div style=\"font-size:0.9em\">Pass by Citi (on the right)</div>",
+              "polyline": {
+                "points": "wkseFt|ajVU?E@g@D_@Dy@HWDeALO@mANE?iANMBsANE@QBmAN}@Js@HiAN"
+              },
+              "start_location": {
+                "lat": 37.7876418,
+                "lng": -122.4034717
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "1.1 mi",
+                "value": 1740
+              },
+              "duration": {
+                "text": "5 mins",
+                "value": 319
+              },
+              "end_location": {
+                "lat": 37.789217,
+                "lng": -122.4238084
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Pine St</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "eeteFrabjVDh@@P@J@PHhA?D@J@HDp@Fx@?F?B@D?@?@?@@RBV@THbABj@BV@TBV@R?@?@@B?F@L@F@T@F?D?B?B@@Bj@Dl@BR@NDr@FbABX@P@PHjADf@FdADd@?@Bf@@B@ZFdA`@|FF|@?HFr@Fv@@P@H@PDh@@PDj@FbAHpAPdCBj@@T@H?J?@@B?B?F@NJxADl@Dj@@J?B?D@D@N@XDl@@NBV@PDf@Dl@Dr@BZ@NDj@B`@J`BPfC@XDb@B^Dv@JvAFhA@F?B@NB\\Bd@Dd@Dl@?@NdCBN@\\@D?HB\\"
+              },
+              "start_location": {
+                "lat": 37.7917068,
+                "lng": -122.4042561
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.8 mi",
+                "value": 1333
+              },
+              "duration": {
+                "text": "4 mins",
+                "value": 228
+              },
+              "end_location": {
+                "lat": 37.8010551,
+                "lng": -122.426195
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Franklin St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "suseFx{ejVSBK@G@G@w@HK@c@Fg@HuARaBRoD`@mD^eANkBRa@DA??@iBRa@FI@E?G@QBYB[Du@JG@YBQBE@[DkBTO@MBUDo@FWDk@FSBQBK@_@DA?[DeALG@O@]D}AR{APMBkD`@iBT[Ba@D"
+              },
+              "start_location": {
+                "lat": 37.789217,
+                "lng": -122.4238084
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "240 ft",
+                "value": 73
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 21
+              },
+              "end_location": {
+                "lat": 37.8011594,
+                "lng": -122.4253764
+              },
+              "html_instructions": "Turn <b>right</b> onto <b>Lombard St</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "s_veFtjfjVA]AIKyAC_@"
+              },
+              "start_location": {
+                "lat": 37.8010551,
+                "lng": -122.426195
+              },
+              "travel_mode": "DRIVING"
+            }
+          ]
+        },
+        "venues": [
+          {
+            "category": "cafes",
+            "id": "Se1xmgWc4JRWPG5MiZFzNg",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/HgHI-IMRp_PqKtt-2CfWDw/o.jpg",
+            "location": {
+              "address": "599 3rd St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.78044,
+                "lng": -122.39425
+              }
+            },
+            "name": "Golden Goat Coffee",
+            "price": "$$",
+            "rating": 4.8,
+            "url": "https://www.yelp.com/biz/golden-goat-coffee-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "cafes",
+            "id": "bDxviAl1jo5lDDsx-3wTsA",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/F3S0zIj845M-SPuzQE4YKA/o.jpg",
+            "location": {
+              "address": "1443 Lombard St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.80103,
+                "lng": -122.42535
+              }
+            },
+            "name": "Kopiku Coffee",
+            "price": "$$",
+            "rating": 4.7,
+            "url": "https://www.yelp.com/biz/kopiku-coffee-san-francisco-3?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "cafes",
+            "id": "EWhqq-gJktFyGKtouMQ8gw",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/M1e20W8Tc-pnJ_cNSqgSnA/o.jpg",
+            "location": {
+              "address": "455 Grant Ave",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.79129,
+                "lng": -122.40589
+              }
+            },
+            "name": "Home Coffee Roasters",
+            "price": "$$",
+            "rating": 4.6,
+            "url": "https://www.yelp.com/biz/home-coffee-roasters-san-francisco-6?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "cafes",
+            "id": "ED3L1nbpWEDePN5cmTQ5cg",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/kk59jZ5Syu7V07Zzzl_tvg/o.jpg",
+            "location": {
+              "address": "370 4th St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.78102,
+                "lng": -122.40022
+              }
+            },
+            "name": "Delah Coffee",
+            "price": "$$",
+            "rating": 4.6,
+            "url": "https://www.yelp.com/biz/delah-coffee-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "cafes",
+            "id": "ZcF6AIgJAwnI0wd0qWuvag",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/bjwtHwYpxEDbUewGEQod6g/o.jpg",
+            "location": {
+              "address": "199 New Montgomery St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.786627,
+                "lng": -122.399088
+              }
+            },
+            "name": "Sana'a Cafe",
+            "price": "$$",
+            "rating": 4.6,
+            "url": "https://www.yelp.com/biz/sanaa-cafe-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          }
+        ]
+      },
+      {
+        "date": "2025-05-06",
+        "day_number": 4,
+        "narrative": "Day 4 is a decadent dive into San Francisco's sweetest spots! Prepare for a sugar rush as you explore top-rated creameries like Garden Creamery, Philmore Creamery, and Milkbomb Ice Cream, indulging in innovative flavors and textures. Don't miss other delightful dessert havens like Butter & Crumble and Holy Nata to round out your sugary adventure.\n",
+        "route": {
+          "destination": {
+            "address": "1820 Fillmore St, San Francisco, CA 94115, USA",
+            "location": {
+              "lat": 37.7864502,
+              "lng": -122.4333678
+            }
+          },
+          "distance": {
+            "text": "2.5 mi",
+            "value": 3971
+          },
+          "duration": {
+            "text": "15 mins",
+            "value": 910
+          },
+          "origin": {
+            "address": "3562 20th St, San Francisco, CA 94110, USA",
+            "location": {
+              "lat": 37.7586817,
+              "lng": -122.420544
+            }
+          },
+          "polyline": "wvmeFjgejVVAFjCBz@@NTpJsJ`@mq@zC_J`@cBHIBIFKVMXCHOTYLIF}@J_Fj@_KlAiEf@SBBb@JxATrDLpBVzDDb@?LI@G@A@iBRkCZOOOAQAO?aD^uDb@}Dd@cAPwEh@}C\\}El@}@Ns@JyALiANiALk@FFz@L`BNxBHnAc@FWBsDd@kEh@m@FMBCm@CW_@{Fa@kG_@aG[eFYsEa@gGK{ARCbDa@nC[pAOjGw@~Gu@VE`@Gp@I`AMNCXCfC]zC_@tDc@xBUlJeAzAQNIlAMlC]rAOrGu@v@KdAMJKj@q@jA{AlBiCj@u@b@g@LEzBK|COf@??mABiAP_CVyD^qEHyBBcAFiGD{GBoDFcCLeCPeBTcCCuB@e@GyBEgBIWCm@Ac@?IEuBMo@IU~@k@n@U^G`BIh@CjAEFCLO~@@nCKpBKd@AzAG|AIb@ACgAAOCw@MsF[wMo@_XOqGGsBCkAXCRAXAtCMvESh@C\\CA{@?CGyAEyAGeCCu@?OS?M@u@DeALyAZkBf@KXoAf@s@\\iAr@cAz@i@h@wAhB}F`IgAzA}@fA[Xo@^i@VaAZYFmBR_EXqCNu@?m@Cy@M{@[_Ag@_@Yk@k@_@e@{B}CgBeCmFsHSS}CcE}GwJwFuHkBaCm@i@eAo@o@Se@Ka@Gy@EwAEq@?eCIaAIsCKuDMuHYqBG{@Aw@Bq@FgBX}@Ni@Pc@Pm@^_A|@o@v@uCzDc@d@g@b@s@^cBp@cAf@o@`@OLa@d@iBzBq@x@{AhBcAfA}AdB{BpB{FbF{@z@aBvAOLaBvA_FfEm@^q@j@}ClC}DhDaLtJuBjBmAxA}CxEaBdC}AhCi@nAm@zA@NHh@HZRxCRpCXlEPvCDb@`@Gb@GfAMj@GDz@PdCZ|Eb@~GpApSHvABZ\\ED?NCxAQtFq@lEg@vBWfLuAxJmAlDa@zH_AfLsAhKmA|BY_@qFq@qKwB}[C]Ag@OsBc@uGSeDnAQp@I",
+          "steps": [
+            {
+              "distance": {
+                "text": "46 ft",
+                "value": 14
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 4
+              },
+              "end_location": {
+                "lat": 37.7585594,
+                "lng": -122.4205292
+              },
+              "html_instructions": "Head <b>south</b> on <b>Lexington St</b> toward <b>20th St</b>",
+              "polyline": {
+                "points": "wvmeFjgejVVA"
+              },
+              "start_location": {
+                "lat": 37.7586817,
+                "lng": -122.420544
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 mi",
+                "value": 258
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 71
+              },
+              "end_location": {
+                "lat": 37.7583819,
+                "lng": -122.4234577
+              },
+              "html_instructions": "Turn <b>right</b> at the 1st cross street onto <b>20th St</b><div style=\"font-size:0.9em\">Pass by BODYROK MISSION Studio (on the left)</div>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "_vmeFhgejVFjC@Z@^?B?B@B?B?B@\\?L@h@F`CDhBBj@"
+              },
+              "start_location": {
+                "lat": 37.7585594,
+                "lng": -122.4205292
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.9 mi",
+                "value": 1384
+              },
+              "duration": {
+                "text": "5 mins",
+                "value": 273
+              },
+              "end_location": {
+                "lat": 37.7707287,
+                "lng": -122.4248098
+              },
+              "html_instructions": "Turn <b>right</b> at the 2nd cross street onto <b>Guerrero St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "{tmeFryejVa@@A?A@C?E?g@BQ@e@BgADI@e@@S@C?_@Bs@BI@u@DY@g@BM?M@A?K@W@gADgAFoCLc@@cAF_DNiBHy@Bk@D_ADsBJcBFwDP_ADgADa@BA?A?A?C?C@C?E?K@u@B_@BiADm@DQ?C@C?C?A?A?A?a@BS@U@U@o@BM@Y@K@E@C@IFKV"
+              },
+              "start_location": {
+                "lat": 37.7583819,
+                "lng": -122.4234577
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.3 mi",
+                "value": 557
+              },
+              "duration": {
+                "text": "3 mins",
+                "value": 155
+              },
+              "end_location": {
+                "lat": 37.7755417,
+                "lng": -122.4261007
+              },
+              "html_instructions": "Continue straight onto <b>Laguna St</b>",
+              "maneuver": "straight",
+              "polyline": {
+                "points": "abpeF`bfjVKPAFABADADCDCBEDKFMDA?GFUBC?G@[Da@DWDYBYDE?A@c@DeALA?G@c@F}AReALUBOBC?C?}@LI?SDWBK@c@DSBgANa@DE@G@WBA?SB"
+              },
+              "start_location": {
+                "lat": 37.7707287,
+                "lng": -122.4248098
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 mi",
+                "value": 293
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 47
+              },
+              "end_location": {
+                "lat": 37.7751254,
+                "lng": -122.4293947
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Fell St</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "c`qeFbjfjVBb@Dl@Dj@Dl@Bj@Dl@Dj@BVDj@?B?@?B?DB\\VrD?@?@?B@DB\\?L"
+              },
+              "start_location": {
+                "lat": 37.7755417,
+                "lng": -122.4261007
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.7 mi",
+                "value": 1052
+              },
+              "duration": {
+                "text": "4 mins",
+                "value": 239
+              },
+              "end_location": {
+                "lat": 37.7844447,
+                "lng": -122.431115
+              },
+              "html_instructions": "Turn <b>right</b> at the 2nd cross street onto <b>Webster St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "q}peFt~fjVI@C@C?A??@A?a@Dc@Da@Fc@DA?A@A?E?IBm@Fc@FOOOAEAK?EAC@A?C?A?C?C@E?[DaAJq@HA@cAJaALYDUBgALuBVa@Da@JmALc@FeAN_@Bm@FQB_@D}@JuBVa@Da@Hc@DE@M@i@JSB_@Fe@Bs@HSBM@YDMBK@G@a@F"
+              },
+              "start_location": {
+                "lat": 37.7751254,
+                "lng": -122.4293947
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.1 mi",
+                "value": 195
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 43
+              },
+              "end_location": {
+                "lat": 37.7845191,
+                "lng": -122.4329733
+              },
+              "html_instructions": "Turn <b>left</b> onto <b>Geary Blvd</b>",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "wwreFnigjVS@UBUBD\\@\\BX@NB`@BT@XBXBXDj@HnA"
+              },
+              "start_location": {
+                "lat": 37.7844447,
+                "lng": -122.431115
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.1 mi",
+                "value": 218
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 78
+              },
+              "end_location": {
+                "lat": 37.7864502,
+                "lng": -122.4333678
+              },
+              "html_instructions": "Turn <b>right</b> at the 1st cross street onto <b>Fillmore St</b>",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "gxreF`ugjVc@FG?OBSBM@c@FmBVkANWBC?C@C?a@F"
+              },
+              "start_location": {
+                "lat": 37.7845191,
+                "lng": -122.4329733
+              },
+              "travel_mode": "DRIVING"
+            }
+          ]
+        },
+        "venues": [
+          {
+            "category": "dessert",
+            "id": "ofFgj0sd8iDQunY00hhDVQ",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/XAVYkcvBpNnrRyTtAv7dfA/o.jpg",
+            "location": {
+              "address": "3566 20th St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.75869,
+                "lng": -122.420435
+              }
+            },
+            "name": "Garden Creamery",
+            "price": "$$",
+            "rating": 4.7,
+            "url": "https://www.yelp.com/biz/garden-creamery-san-francisco-2?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "dessert",
+            "id": "DicCVq8FwpfT9lD40B_sxg",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/XBZUBw7eXffHed28vDtDiA/o.jpg",
+            "location": {
+              "address": "1840 Fillmore St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.7865093379388,
+                "lng": -122.43329192402
+              }
+            },
+            "name": "Philmore Creamery",
+            "price": "$$",
+            "rating": 4.7,
+            "url": "https://www.yelp.com/biz/philmore-creamery-san-francisco-3?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "dessert",
+            "id": "LFEBCjZ-M3XUFJDszYFX6A",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/Jb_YcFPfWiDAzh_EsXN0aw/o.jpg",
+            "location": {
+              "address": "1717 17th St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.764788631805,
+                "lng": -122.40119110172758
+              }
+            },
+            "name": "Milkbomb Ice Cream",
+            "price": "$$",
+            "rating": 4.7,
+            "url": "https://www.yelp.com/biz/milkbomb-ice-cream-san-francisco-3?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "dessert",
+            "id": "n2GY7m3E0MMP_D-eYtY4YQ",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/lDbFumYPeUEYS3cmPvqq8w/o.jpg",
+            "location": {
+              "address": "271 Francisco St",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.80506389256706,
+                "lng": -122.4096941035609
+              }
+            },
+            "name": "Butter & Crumble",
+            "price": "$$",
+            "rating": 4.6,
+            "url": "https://www.yelp.com/biz/butter-and-crumble-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          },
+          {
+            "category": "dessert",
+            "id": "tkSXD7i6ktnNPr-fvdXOBQ",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/5KUTp3GHii5ihLVPxKyZGQ/o.jpg",
+            "location": {
+              "address": "8 Trinity Place",
+              "city": "San Francisco",
+              "coordinates": {
+                "lat": 37.79029998044881,
+                "lng": -122.40257613290844
+              }
+            },
+            "name": "Holy Nata",
+            "price": "$$",
+            "rating": 4.6,
+            "url": "https://www.yelp.com/biz/holy-nata-san-francisco?adjust_creative=oBE5yrXWXVzDjZ8xscFPDw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=oBE5yrXWXVzDjZ8xscFPDw"
+          }
+        ]
+      }
+    ],
+    "end_date": "2025-05-06T18:12:31.943338",
+    "end_location": {
+      "address": "456 Market St, San Francisco, CA",
+      "coordinates": {
+        "formatted_address": "456 Market St, San Francisco, CA 94111, USA",
+        "lat": 37.7913557,
+        "lng": -122.3989642
+      }
+    },
+    "interests": [
+      "restaurants",
+      "food",
+      "cafes",
+      "dessert",
+      "breweries"
+    ],
+    "start_date": "2025-05-03T18:12:31.943338",
+    "start_location": {
+      "address": "123 Main St, San Francisco, CA",
+      "coordinates": {
+        "formatted_address": "123 Main St, San Francisco, CA 94105, USA",
+        "lat": 37.791664,
+        "lng": -122.394421
+      }
+    },
+    "total_venues": 25,
+    "trip_id": "trip_20250426181247",
+    "trip_vibe": "foodie",
+    "user_email": "test@example.com"
+  },
+  "status": "success"
+}
