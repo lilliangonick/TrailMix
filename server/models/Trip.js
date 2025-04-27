@@ -1,17 +1,10 @@
 const mongoose = require("mongoose");
 
-// set the start/end locations
-const locationSchema = new mongoose.Schema({
-    address: { type: String, required: true },
-    lat: { type: Number, required: true },
-    lng: { type: Number, required: true },
-  });
-
 // create trip
 const tripSchema = new mongoose.Schema({
     userEmail: { type: String, ref: 'User', required: true },
-    startLocation: locationSchema,
-    endLocation: locationSchema,
+    startLocation: { type: String, required: true },
+    endLocation: { type: String, required: true },
     budget:        {
       type: String,
       enum: ['1', '2', '3', '4'], // relates to each yelp $ amount
