@@ -92,6 +92,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               <Input
                 name="startLocation"
                 fontFamily="mono"
+                color="black" 
                 value={formData.startLocation}
                 onChange={handleInputChange}
                 placeholder="Enter start location"
@@ -104,6 +105,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               <Input
                 name="endLocation"
                 fontFamily="mono"
+                color="black"
                 value={formData.endLocation}
                 onChange={handleInputChange}
                 placeholder="Enter end location"
@@ -117,6 +119,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                 name="startTime"
                 fontFamily="mono"
                 type="datetime-local"
+                color="black"
                 value={formData.startTime}
                 onChange={handleInputChange}
                 required
@@ -129,6 +132,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                 name="endTime"
                 fontFamily="mono"
                 type="datetime-local"
+                color="black"
                 value={formData.endTime}
                 onChange={handleInputChange}
                 required
@@ -141,6 +145,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                 name="passengers"
                 fontFamily="mono"
                 type="number"
+                color="black"
                 min={1}
                 max={10}
                 value={formData.passengers}
@@ -201,7 +206,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} color="black" fontFamily="mono">Budget</Text>
+              <Text mb={2} color="black" fontFamily="mono">Price Point</Text>
               <HStack gap={2}>
                 {[1, 2, 3, 4].map((level) => (
                   <Button

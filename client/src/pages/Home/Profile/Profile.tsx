@@ -64,7 +64,7 @@ export const Profile: React.FC<ProfileProps> = ({ open, onClose, name, onImageCh
               <Avatar.Fallback name={name} fontFamily='mono' />
               <Avatar.Image src={image || "#"} />
             </Avatar.Root>
-            <Text fontSize="xl" fontWeight="bold" mt={4}>{name}</Text>
+            <Text fontSize="xl" color="black" fontWeight="bold" mt={4}>{name}</Text>
             <Text
               as="button"
               bg="transparent"
