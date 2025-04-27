@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Heading,
@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { LocationInput } from './LocationInput/LocationInput'; // Make sure you have this file
 import { DeleteIcon } from '@chakra-ui/icons';
+import { useDebounce } from '../../../hooks/useDebounce';
 
 interface TripFormProps {
   isOpen: boolean;
@@ -43,6 +44,71 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
   });
 
   const [newUserEmail, setNewUserEmail] = useState('');
+  const [emailValidation, setEmailValidation] = useState<{
+    isValid: boolean;
+    message: string;
+    checking: boolean;
+  }>({
+    isValid: false,
+    message: '',
+    checking: false,
+  });
+
+  const debouncedEmail = useDebounce(newUserEmail, 500);
+
+  useEffect(() => {
+    const validateEmail = async () => {
+      if (!debouncedEmail) {
+        setEmailValidation({
+          isValid: false,
+          message: '',
+          checking: false,
+        });
+        return;
+      }
+
+      // Basic email format validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(debouncedEmail)) {
+        setEmailValidation({
+          isValid: false,
+          message: 'Please enter a valid email address',
+          checking: false,
+        });
+        return;
+      }
+
+      setEmailValidation(prev => ({ ...prev, checking: true }));
+
+      try {
+        const response = await fetch(`http://localhost:4000/api/users/check/${encodeURIComponent(debouncedEmail)}`);
+        const data = await response.json();
+
+        if (data.exists) {
+          setEmailValidation({
+            isValid: true,
+            message: 'User found',
+            checking: false,
+          });
+        } else {
+          setEmailValidation({
+            isValid: false,
+            message: 'User not found',
+            checking: false,
+          });
+        }
+      } catch (error) {
+        console.error('Error checking user:', error);
+        setEmailValidation({
+          isValid: false,
+          message: 'Error checking user',
+          checking: false,
+        });
+      }
+    };
+
+    validateEmail();
+  }, [debouncedEmail]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -53,18 +119,17 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
   };
 
   const handleAddUser = () => {
-    if (newUserEmail && formData.additionalUsers.length < 10) {
-      console.log('Adding user:', newUserEmail);
-      console.log('Current additionalUsers:', formData.additionalUsers);
-      setFormData(prev => {
-        const newUsers = [...prev.additionalUsers, newUserEmail];
-        console.log('New additionalUsers:', newUsers);
-        return {
-          ...prev,
-          additionalUsers: newUsers
-        };
-      });
+    if (newUserEmail && formData.additionalUsers.length < 10 && emailValidation.isValid) {
+      setFormData(prev => ({
+        ...prev,
+        additionalUsers: [...prev.additionalUsers, newUserEmail]
+      }));
       setNewUserEmail('');
+      setEmailValidation({
+        isValid: false,
+        message: '',
+        checking: false,
+      });
     }
   };
 
@@ -262,7 +327,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                 />
                 <Button
                   onClick={handleAddUser}
-                  disabled={!newUserEmail || formData.additionalUsers.length >= 10}
+                  disabled={!newUserEmail || formData.additionalUsers.length >= 10 || !emailValidation.isValid}
                   bg="gray.600"
                   color="white"
                   _hover={{ bg: 'gray.700' }}
@@ -274,6 +339,15 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                   Add
                 </Button>
               </HStack>
+              {emailValidation.message && (
+                <Text 
+                  fontSize="xs" 
+                  mt={1} 
+                  color={emailValidation.isValid ? 'green.500' : 'red.500'}
+                >
+                  {emailValidation.checking ? 'Checking...' : emailValidation.message}
+                </Text>
+              )}
               {formData.additionalUsers.length > 0 && (
                 <VStack align="stretch" mt={2} gap={1}>
                   {formData.additionalUsers.map((email, index) => (
