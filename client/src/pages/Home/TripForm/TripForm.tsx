@@ -8,7 +8,7 @@ import {
   CloseButton,
   HStack,
 } from '@chakra-ui/react';
-import { LocationInput } from './LocationInput'; // Make sure you have this file
+import { LocationInput } from './LocationInput/LocationInput'; // Make sure you have this file
 
 interface TripFormProps {
   isOpen: boolean;
