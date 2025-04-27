@@ -6,6 +6,7 @@ const tripSchema = new mongoose.Schema({
     startLocation: { type: String, required: true },
     endLocation: { type: String, required: true },
     passengers: { type: Number, required: true },
+    additionalUsers: [{ type: String }],
     activities: [{ type: String }],
     budget: { 
       type: String,

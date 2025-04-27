@@ -7,6 +7,7 @@ const User = require('./models/User');
 const authRoutes = require('./routes/auth');
 const tripRoutes = require('./routes/trips');
 const placeRoutes = require('./routes/places');
+const userRoutes = require('./routes/user');
 
 // load environment variables and read .env
 require('dotenv').config();
@@ -27,6 +28,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/trips', tripRoutes);
 app.use('/api/places', placeRoutes);
+app.use('/api/users', userRoutes);
 
 // connect to mongo and then start server
 mongoose.connect(process.env.MONGO_URI, {

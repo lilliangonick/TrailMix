@@ -6,7 +6,7 @@ exports.createTrip = async (req, res) => {
     console.log('Received trip data:', req.body);
     
     // Validate required fields
-    const requiredFields = ['startLocation', 'endLocation', 'startDate', 'endDate', 'passengers', 'budget'];
+    const requiredFields = ['startLocation', 'endLocation', 'startDate', 'endDate', 'passengers', 'budget', 'additionalUsers'];
     for (const field of requiredFields) {
       if (!req.body[field]) {
         console.log(`Missing required field: ${field}`);
@@ -21,6 +21,7 @@ exports.createTrip = async (req, res) => {
       endDate, 
       passengers, 
       activities = [], 
+      additionalUsers = [],
       budget 
     } = req.body;
 
@@ -40,7 +41,8 @@ exports.createTrip = async (req, res) => {
       endDate,
       passengers: parseInt(passengers),
       activities: Array.isArray(activities) ? activities : [activities],
-      budget
+      budget,
+      additionalUsers: Array.isArray(additionalUsers) ? additionalUsers : [additionalUsers],
     });
 
     console.log('Attempting to save trip:', trip);
