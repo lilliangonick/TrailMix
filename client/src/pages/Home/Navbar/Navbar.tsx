@@ -1,54 +1,64 @@
 // src/components/Navbar.tsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Flex,
-  Heading,
-  Spacer,
-  Link as ChakraLink,
+  Box,
+  Text,
   Avatar,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { useDisclosure } from '@chakra-ui/react';
+import Profile from '../Profile/Profile';
+import { jwtDecode } from 'jwt-decode';
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
+  const { open, onOpen, onClose } = useDisclosure();
+  const [profileImage, setProfileImage] = useState<string | null>(null);
+  const token = localStorage.getItem('token');
+  const decodedToken = token ? jwtDecode<{ email: string }>(token) : null;
+  const userEmail = decodedToken?.email || 'soph@example.com';
+
   return (
-    <Flex
+    <Box
       as="nav"
-      w="100%"
-      px={6}
-      py={4}
-      align="center"
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
       bg="white"
       boxShadow="0 2px 6px rgba(0, 0, 0, 0.1)"
-      position="sticky"
-      top={0}
-      zIndex={10}
+      zIndex={1000}
     >
-      <Heading
-        size="md"
-        color="cyan.600"
-      >
-        Trailmix
-      </Heading>
-
-      <Spacer />
-
-      <ChakraLink
-        as={RouterLink}
-        href="#"
+      <Box
+        h={16}
+        px={4}
         display="flex"
         alignItems="center"
-        _focus={{
-            boxShadow: 'none',
-            outline: 'none',
-          }}
+        justifyContent="space-between"
       >
-        <Avatar.Root>
-          <Avatar.Fallback name="soph zhu" fontFamily='mono' />
-          <Avatar.Image src="#" />
-        </Avatar.Root>
-      </ChakraLink>
-    </Flex>
+        <Text fontSize="xl" fontWeight="bold" color="cyan.600" fontFamily="mono">
+          TrailMix
+        </Text>
+        <Box
+          as="button"
+          onClick={onOpen}
+          cursor="pointer"
+          _hover={{ opacity: 0.8 }}
+          bg="transparent"
+          border="none"
+        >
+          <Avatar.Root>
+            <Avatar.Fallback name={userEmail} fontFamily='mono' />
+            <Avatar.Image src={profileImage || undefined} />
+          </Avatar.Root>
+        </Box>
+      </Box>
+      <Profile 
+        open={open} 
+        onClose={onClose} 
+        name={userEmail}
+        onImageChange={setProfileImage}
+      />
+    </Box>
   );
 };
 

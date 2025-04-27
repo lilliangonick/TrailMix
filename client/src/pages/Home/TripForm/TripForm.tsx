@@ -100,7 +100,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">End Location</Text>
+              <Text mb={2} color="black" fontFamily="mono">End Location</Text>
               <Input
                 name="endLocation"
                 fontFamily="mono"
@@ -112,7 +112,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">Start Time</Text>
+              <Text mb={2} color="black" fontFamily="mono">Start Time</Text>
               <Input
                 name="startTime"
                 fontFamily="mono"
@@ -124,7 +124,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">End Time</Text>
+              <Text mb={2} color="black" fontFamily="mono">End Time</Text>
               <Input
                 name="endTime"
                 fontFamily="mono"
@@ -136,7 +136,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">Number of Passengers</Text>
+              <Text mb={2} color="black" fontFamily="mono">Number of Passengers</Text>
               <Input
                 name="passengers"
                 fontFamily="mono"
@@ -150,7 +150,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">Activities</Text>
+              <Text mb={2} color="black" fontFamily="mono">Activities</Text>
               <Stack gap={2}>
                 <Box>
                   <input
@@ -165,7 +165,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="shopping" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Shopping</label>
+                  <label htmlFor="shopping" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Shopping</label>
                 </Box>
                 <Box>
                   <input
@@ -180,7 +180,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Nature</label>
+                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Nature</label>
                 </Box>
                 <Box>
                   <input
@@ -195,13 +195,13 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
                     }}
                   />
-                  <label htmlFor="food" style={{ fontFamily: 'Space Mono', fontSize: '14px' }}> Food</label>
+                  <label htmlFor="food" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Food</label>
                 </Box>
               </Stack>
             </Box>
 
             <Box>
-              <Text mb={2} fontFamily="mono">Budget</Text>
+              <Text mb={2} color="black" fontFamily="mono">Budget</Text>
               <HStack gap={2}>
                 {[1, 2, 3, 4].map((level) => (
                   <Button
