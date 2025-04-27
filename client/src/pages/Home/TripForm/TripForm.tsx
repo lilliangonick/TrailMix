@@ -18,8 +18,8 @@ interface TripFormProps {
 interface FormData {
   startLocation: string;
   endLocation: string;
-  startTime: string;
-  endTime: string;
+  startDate: string;
+  endDate: string;
   passengers: number;
   activities: string[];
   budget: string;
@@ -29,8 +29,8 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState<FormData>({
     startLocation: '',
     endLocation: '',
-    startTime: '',
-    endTime: '',
+    startDate: '',
+    endDate: '',
     passengers: 1,
     activities: [],
     budget: '',
@@ -44,10 +44,54 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    onClose();
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('No authentication token found');
+      }
+
+      // Validate budget
+      if (!['1', '2', '3', '4'].includes(formData.budget)) {
+        throw new Error('Please select a valid budget level (1-4)');
+      }
+
+      // Convert activities to tripVibe
+      const tripVibe = formData.activities.includes('food') ? 'foodie' :
+                      formData.activities.includes('nature') ? 'explorer' :
+                      formData.activities.includes('shopping') ? 'shopper' : 'explorer';
+
+      const response = await fetch('http://localhost:4000/api/trips', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          startLocation: formData.startLocation,
+          endLocation: formData.endLocation,
+          budget: formData.budget.toString(),
+          tripVibe,
+          startDate: new Date(formData.startDate).toISOString(),
+          endDate: new Date(formData.endDate).toISOString(),
+          passengers: formData.passengers,
+          activities: formData.activities
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to create trip');
+      }
+
+      const data = await response.json();
+      console.log('Trip created:', data);
+      onClose();
+    } catch (error: any) {
+      console.error('Error creating trip:', error);
+      alert(error.message || 'Failed to create trip. Please try again.');
+    }
   };
 
   if (!isOpen) return null;
@@ -112,12 +156,12 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
 
             {/* Start Time */}
             <Box>
-              <Text mb={2} color="black" fontFamily="mono">Start Time</Text>
+              <Text mb={2} color="black" fontFamily="mono">Start Date</Text>
               <input
                 type="datetime-local"
                 color="black"
-                name="startTime"
-                value={formData.startTime}
+                name="startDate"
+                value={formData.startDate}
                 onChange={handleInputChange}
                 style={{ 
                   fontFamily: 'Space Mono', 
@@ -134,12 +178,12 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
 
             {/* End Time */}
             <Box>
-              <Text mb={2} color="black" fontFamily="mono">End Time</Text>
+              <Text mb={2} color="black" fontFamily="mono">End Date</Text>
               <input
                 type="datetime-local"
                 color="black"
-                name="endTime"
-                value={formData.endTime}
+                name="endDate"
+                value={formData.endDate}
                 onChange={handleInputChange}
                 style={{ 
                   fontFamily: 'Space Mono', 

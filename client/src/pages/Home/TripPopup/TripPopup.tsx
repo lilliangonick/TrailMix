@@ -7,17 +7,10 @@ import {
   Badge,
   VStack,
   HStack,
+  Button,
 } from '@chakra-ui/react';
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-} from '@chakra-ui/modal';
 
-interface TripDetailsProps {
+interface TripPopupProps {
   isOpen: boolean;
   onClose: () => void;
   trip: {
@@ -34,25 +27,73 @@ interface TripDetailsProps {
   };
 }
 
-export const TripDetails: React.FC<TripDetailsProps> = ({ isOpen, onClose, trip }) => {
+export const TripPopup: React.FC<TripPopupProps> = ({ isOpen, onClose, trip }) => {
+  if (!isOpen) return null;
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="xl">
-      <ModalOverlay />
-      <ModalContent borderRadius="xl" overflow="hidden">
-        <Image
-          src={trip.imageUrl || '/assets/explorer.jpg'}
-          alt={`${trip.startLocation} to ${trip.endLocation}`}
-          objectFit="cover"
-          h="200px"
-          w="full"
-        />
-        <ModalHeader>
-          <Text fontSize="2xl" fontWeight="bold">
-            {trip.startLocation} to {trip.endLocation}
-          </Text>
-        </ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb={6}>
+    <Box
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      bg="rgba(0, 0, 0, 0.5)"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      zIndex={1000}
+      onClick={onClose}
+    >
+      <Box
+        bg="white"
+        w="80%"
+        maxW="800px"
+        h="80%"
+        borderRadius="xl"
+        boxShadow="2xl"
+        position="relative"
+        overflow="hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Button
+          position="absolute"
+          top={4}
+          right={4}
+          zIndex={1}
+          onClick={onClose}
+          variant="ghost"
+          size="sm"
+          fontSize="xl"
+          fontWeight="bold"
+          color="gray.500"
+          _hover={{ color: 'gray.700' }}
+        >
+          ×
+        </Button>
+        
+        <Box position="relative" h="40%">
+          <Image
+            src={trip.imageUrl || '/assets/explorer.jpg'}
+            alt={`${trip.startLocation} to ${trip.endLocation}`}
+            objectFit="cover"
+            h="full"
+            w="full"
+          />
+          <Box
+            position="absolute"
+            bottom="0"
+            left="0"
+            right="0"
+            bg="linear-gradient(to top, rgba(0,0,0,0.8), transparent)"
+            p={4}
+          >
+            <Text fontSize="2xl" fontWeight="bold" color="white">
+              {trip.startLocation} to {trip.endLocation}
+            </Text>
+          </Box>
+        </Box>
+
+        <Box p={6} overflowY="auto" h="60%">
           <VStack align="stretch" gap={4}>
             <HStack justify="space-between">
               <Text fontWeight="medium">Dates:</Text>
@@ -90,10 +131,8 @@ export const TripDetails: React.FC<TripDetailsProps> = ({ isOpen, onClose, trip 
               Created on {new Date(trip.createdAt).toLocaleDateString()}
             </Text>
           </VStack>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+        </Box>
+      </Box>
+    </Box>
   );
-};
-
-export default TripDetails; 
+}; 

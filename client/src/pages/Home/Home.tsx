@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -10,38 +10,108 @@ import {
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
-import TripCard from './TripCard/TripCard';
+import { TripCard } from './TripCard/TripCard';
 import TripForm from './TripForm/TripForm';
-import TripDetails from './TripDetails/TripDetails';
+import { TripPopup } from './TripPopup/TripPopup';
+import { getLocationImage } from '../../utils/locationImage';
 
 interface Trip {
-  id: number;
-  title: string;
-  image: string;
-  startLocation?: string;
-  endLocation?: string;
-  startTime?: string;
-  endTime?: string;
-  passengers?: number;
-  activities?: string[];
-  budget?: string;
+  _id: string;
+  startLocation: string;
+  endLocation: string;
+  startDate: string;
+  endDate: string;
+  passengers: number;
+  activities: string[];
+  budget: string;
+  createdAt: string;
+  imageUrl?: string;
 }
 
 export const Home = () => {
   const { open: isFormOpen, onOpen: onFormOpen, onClose: onFormClose } = useDisclosure();
   const { open: isDetailsOpen, onOpen: onDetailsOpen, onClose: onDetailsClose } = useDisclosure();
   const [selectedTrip, setSelectedTrip] = useState<Trip | null>(null);
-  const [trips, setTrips] = useState<Trip[]>([
-    {
-      id: 1,
-      title: "Yosemite",
-      image: "../../../assets/yosemite.jpg",
-    },
-  ]);
+  const [trips, setTrips] = useState<Trip[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTrips = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          throw new Error('No authentication token found');
+        }
+
+        const response = await fetch('http://localhost:4000/api/trips', {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch trips');
+        }
+
+        const data = await response.json();
+        
+        // Fetch images for each trip
+        const tripsWithImages = await Promise.all(
+          data.map(async (trip: Trip) => {
+            const imageUrl = await getLocationImage(trip.endLocation);
+            return { ...trip, imageUrl };
+          })
+        );
+        
+        setTrips(tripsWithImages);
+      } catch (error) {
+        console.error('Error fetching trips:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchTrips();
+  }, []);
 
   const handleTripClick = (trip: Trip) => {
     setSelectedTrip(trip);
     onDetailsOpen();
+  };
+
+  const handleTripCreated = async () => {
+    onFormClose();
+    // Refresh trips list
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        throw new Error('No authentication token found');
+      }
+
+      const response = await fetch('http://localhost:4000/api/trips', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch trips');
+      }
+
+      const data = await response.json();
+      
+      // Fetch images for each trip
+      const tripsWithImages = await Promise.all(
+        data.map(async (trip: Trip) => {
+          const imageUrl = await getLocationImage(trip.endLocation);
+          return { ...trip, imageUrl };
+        })
+      );
+      
+      setTrips(tripsWithImages);
+    } catch (error) {
+      console.error('Error fetching trips:', error);
+    }
   };
 
   return (
@@ -94,11 +164,9 @@ export const Home = () => {
                 {/* Existing Trip Cards */}
                 {trips.map((trip) => (
                   <TripCard
-                    key={trip.id}
-                    imageSrc={trip.image}
-                    title={trip.title}
-                    onClick={() => handleTripClick(trip)}
+                    key={trip._id}
                     trip={trip}
+                    onClick={() => handleTripClick(trip)}
                   />
                 ))}
               </SimpleGrid>
@@ -106,12 +174,13 @@ export const Home = () => {
           </Box>
         </Flex>
       </VStack>
-      <TripForm isOpen={isFormOpen} onClose={onFormClose} />
+
+      <TripForm isOpen={isFormOpen} onClose={handleTripCreated} />
       {selectedTrip && (
-        <TripDetails 
-          isOpen={isDetailsOpen} 
-          onClose={onDetailsClose} 
-          trip={selectedTrip} 
+        <TripPopup
+          isOpen={isDetailsOpen}
+          onClose={onDetailsClose}
+          trip={selectedTrip}
         />
       )}
     </Box>
