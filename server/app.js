@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const authRoutes = require('./routes/auth');
 
-
 // load environment variables and read .env
 require('dotenv').config();
 
@@ -22,6 +21,7 @@ app.get('/api/places/hello', (_req, res) => {
 app.use(cors());
 app.use(express.json());
 
+// auth routes
 app.use('/api/auth', authRoutes);
 
 // connect to mongo and then start server
