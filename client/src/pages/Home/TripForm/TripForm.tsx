@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import {
   Box,
   Heading,
-  Input,
   Button,
   Text,
   Stack,
   CloseButton,
   HStack,
 } from '@chakra-ui/react';
+import { LocationInput } from './LocationInput'; // Make sure you have this file
 
 interface TripFormProps {
   isOpen: boolean;
@@ -36,17 +36,16 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
     budget: '',
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev: FormData) => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: name === 'passengers' ? Number(value) : value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Handle form submission
     console.log(formData);
     onClose();
   };
@@ -85,126 +84,129 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
         <Heading size="xl" color="cyan.600" mb={6}>
           Plan Your Trip
         </Heading>
+
         <form onSubmit={handleSubmit}>
           <Stack gap={4} align="stretch">
+
+            {/* Start Location */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Start Location</Text>
-              <Input
+              <LocationInput
                 name="startLocation"
-                fontFamily="mono"
                 color="black" 
                 value={formData.startLocation}
-                onChange={handleInputChange}
+                onChange={(value) => setFormData((prev) => ({ ...prev, startLocation: value }))}
                 placeholder="Enter start location"
-                required
               />
             </Box>
 
+            {/* End Location */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">End Location</Text>
-              <Input
+              <LocationInput
                 name="endLocation"
-                fontFamily="mono"
                 color="black"
                 value={formData.endLocation}
-                onChange={handleInputChange}
+                onChange={(value) => setFormData((prev) => ({ ...prev, endLocation: value }))}
                 placeholder="Enter end location"
-                required
               />
             </Box>
 
+            {/* Start Time */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Start Time</Text>
-              <Input
-                name="startTime"
-                fontFamily="mono"
+              <input
                 type="datetime-local"
                 color="black"
+                name="startTime"
                 value={formData.startTime}
                 onChange={handleInputChange}
+                style={{ 
+                  fontFamily: 'Space Mono', 
+                  padding: '10px', 
+                  borderRadius: '6px', 
+                  border: '1px solid lightgray', 
+                  width: '100%',
+                  backgroundColor: 'white',
+                  color: 'black'
+                }}
                 required
               />
             </Box>
 
+            {/* End Time */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">End Time</Text>
-              <Input
-                name="endTime"
-                fontFamily="mono"
+              <input
                 type="datetime-local"
                 color="black"
+                name="endTime"
                 value={formData.endTime}
                 onChange={handleInputChange}
+                style={{ 
+                  fontFamily: 'Space Mono', 
+                  padding: '10px', 
+                  borderRadius: '6px', 
+                  border: '1px solid lightgray', 
+                  width: '100%',
+                  backgroundColor: 'white',
+                  color: 'black'
+                }}
                 required
               />
             </Box>
 
+            {/* Number of Passengers */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Number of Passengers</Text>
-              <Input
-                name="passengers"
-                fontFamily="mono"
+              <input
                 type="number"
+                name="passengers"
                 color="black"
                 min={1}
                 max={10}
                 value={formData.passengers}
                 onChange={handleInputChange}
+                style={{ 
+                  fontFamily: 'Space Mono', 
+                  padding: '10px', 
+                  borderRadius: '6px', 
+                  border: '1px solid lightgray', 
+                  width: '100%',
+                  backgroundColor: 'white',
+                  color: 'black'
+                }}
                 required
               />
             </Box>
 
+            {/* Activities */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Activities</Text>
               <Stack gap={2}>
-                <Box>
-                  <input
-                    type="checkbox"
-                    id="shopping"
-                    name="activities"
-                    value="shopping"
-                    onChange={(e) => {
-                      const newActivities = e.target.checked
-                        ? [...formData.activities, e.target.value]
-                        : formData.activities.filter(a => a !== e.target.value);
-                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
-                    }}
-                  />
-                  <label htmlFor="shopping" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Shopping</label>
-                </Box>
-                <Box>
-                  <input
-                    type="checkbox"
-                    id="activities"
-                    name="activities"
-                    value="nature"
-                    onChange={(e) => {
-                      const newActivities = e.target.checked
-                        ? [...formData.activities, e.target.value]
-                        : formData.activities.filter(a => a !== e.target.value);
-                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
-                    }}
-                  />
-                  <label htmlFor="activities" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Nature</label>
-                </Box>
-                <Box>
-                  <input
-                    type="checkbox"
-                    id="food"
-                    name="activities"
-                    value="food"
-                    onChange={(e) => {
-                      const newActivities = e.target.checked
-                        ? [...formData.activities, e.target.value]
-                        : formData.activities.filter(a => a !== e.target.value);
-                      setFormData((prev: FormData) => ({ ...prev, activities: newActivities }));
-                    }}
-                  />
-                  <label htmlFor="food" style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}> Food</label>
-                </Box>
+                {['shopping', 'nature', 'food'].map((activity) => (
+                  <Box key={activity}>
+                    <input
+                      type="checkbox"
+                      id={activity}
+                      name="activities"
+                      value={activity}
+                      onChange={(e) => {
+                        const newActivities = e.target.checked
+                          ? [...formData.activities, e.target.value]
+                          : formData.activities.filter(a => a !== e.target.value);
+                        setFormData((prev) => ({ ...prev, activities: newActivities }));
+                      }}
+                    />
+                    <label htmlFor={activity} style={{ fontFamily: 'Space Mono', color: 'black', fontSize: '14px' }}>
+                      {' '}{activity.charAt(0).toUpperCase() + activity.slice(1)}
+                    </label>
+                  </Box>
+                ))}
               </Stack>
             </Box>
 
+            {/* Budget */}
             <Box>
               <Text mb={2} color="black" fontFamily="mono">Price Point</Text>
               <HStack gap={2}>
@@ -219,7 +221,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
                       bg: formData.budget === level.toString() ? 'cyan.600' : 'cyan.50',
                       border: '0px'
                     }}
-                    onClick={() => setFormData((prev: FormData) => ({ ...prev, budget: level.toString() }))}
+                    onClick={() => setFormData((prev) => ({ ...prev, budget: level.toString() }))}
                     fontFamily="mono"
                   >
                     {'$'.repeat(level)}
@@ -228,6 +230,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               </HStack>
             </Box>
 
+            {/* Submit Button */}
             <Button
               type="submit"
               colorScheme="cyan"
@@ -249,6 +252,7 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
             >
               Plan Trip
             </Button>
+
           </Stack>
         </form>
       </Box>
@@ -256,4 +260,4 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default TripForm; 
+export default TripForm;
