@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 const User = require('./models/User');
 const authRoutes = require('./routes/auth');
+const tripRoutes = require('./routes/trips');
+const placeRoutes = require('./routes/places');
 
 // load environment variables and read .env
 require('dotenv').config();
@@ -21,8 +23,10 @@ app.get('/api/places/hello', (_req, res) => {
 app.use(cors());
 app.use(express.json());
 
-// auth routes
+// routes
 app.use('/api/auth', authRoutes);
+app.use('/api/trips', tripRoutes);
+app.use('/api/places', placeRoutes);
 
 // connect to mongo and then start server
 mongoose.connect(process.env.MONGO_URI, {
@@ -44,6 +48,3 @@ app.get('/api/status', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-const placeRoutes = require('./routes/places');
-app.use('/api/places', placeRoutes);
