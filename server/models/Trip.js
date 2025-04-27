@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 // create trip
 const tripSchema = new mongoose.Schema({
-    userEmail: { type: String, required: true },
+    ownerEmail: { type: String, required: true }, // The user who created the trip
+    sharedWith: [{ type: String }], // Users who have access to this trip
     startLocation: { type: String, required: true },
     endLocation: { type: String, required: true },
     passengers: { type: Number, required: true },
-    additionalUsers: [{ type: String }],
     activities: [{ type: String }],
     budget: { 
       type: String,

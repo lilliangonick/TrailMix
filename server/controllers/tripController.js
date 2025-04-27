@@ -31,18 +31,19 @@ exports.createTrip = async (req, res) => {
       return res.status(401).json({ error: 'User not authenticated' });
     }
 
-    console.log('Creating trip with user email:', req.user.email);
+    console.log('Creating trip with owner email:', req.user.email);
 
+    // Create a single trip document
     const trip = new Trip({
-      userEmail: req.user.email,
+      ownerEmail: req.user.email,
+      sharedWith: Array.isArray(additionalUsers) ? additionalUsers : [additionalUsers],
       startLocation,
       endLocation,
       startDate,
       endDate,
       passengers: parseInt(passengers),
       activities: Array.isArray(activities) ? activities : [activities],
-      budget,
-      additionalUsers: Array.isArray(additionalUsers) ? additionalUsers : [additionalUsers],
+      budget
     });
 
     console.log('Attempting to save trip:', trip);
@@ -75,8 +76,13 @@ exports.getTrips = async (req, res) => {
       return res.status(401).json({ error: 'User not authenticated' });
     }
 
-    const trips = await Trip.find({ userEmail: req.user.email })
-      .sort({ createdAt: -1 }); // Sort by newest first
+    // Get trips where user is either the owner or has been shared with
+    const trips = await Trip.find({
+      $or: [
+        { ownerEmail: req.user.email },
+        { sharedWith: req.user.email }
+      ]
+    }).sort({ createdAt: -1 }); // Sort by newest first
 
     res.status(200).json(trips);
   } catch (err) {
