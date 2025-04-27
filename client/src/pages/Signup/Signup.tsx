@@ -24,6 +24,11 @@ export const Signup = () => {
 
   const handleSignup = async () => {
     try {
+      if (password !== retypePassword) {
+        setError('Passwords do not match.');
+        return;
+      }
+
       const response = await fetch('http://localhost:4000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -32,19 +37,24 @@ export const Signup = () => {
 
       const data = await response.json();
 
-      if (password !== retypePassword) {
-        setError('Passwords do not match.');
-        return;
-      }
-
       if (!response.ok) {
         setError(data.message || 'Error creating profile');
       } else {
-        setSuccess('Account created successfully! You can now log in.');
-        setEmail('');
-        setPassword('');
-        setRetypePassword('');
-        navigate('/home');
+        // After successful registration, log the user in
+        const loginResponse = await fetch('http://localhost:4000/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const loginData = await loginResponse.json();
+
+        if (loginResponse.ok) {
+          localStorage.setItem('token', loginData.token);
+          navigate('/home');
+        } else {
+          setError(loginData.message || 'Error logging in after registration');
+        }
       }
     } catch (err) {
       setError('Server error. Please try again later.');
