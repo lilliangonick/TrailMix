@@ -93,7 +93,6 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               <Text mb={2} color="black" fontFamily="mono">Start Location</Text>
               <LocationInput
                 name="startLocation"
-                color="black" 
                 value={formData.startLocation}
                 onChange={(value) => setFormData((prev) => ({ ...prev, startLocation: value }))}
                 placeholder="Enter start location"
@@ -105,7 +104,6 @@ export const TripForm: React.FC<TripFormProps> = ({ isOpen, onClose }) => {
               <Text mb={2} color="black" fontFamily="mono">End Location</Text>
               <LocationInput
                 name="endLocation"
-                color="black"
                 value={formData.endLocation}
                 onChange={(value) => setFormData((prev) => ({ ...prev, endLocation: value }))}
                 placeholder="Enter end location"
