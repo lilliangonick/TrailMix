@@ -63,7 +63,7 @@ export const Home = () => {
             maxW="6xl"
             p={14}
           >
-            <VStack gap={8} align="stretch">
+            <VStack gap={11} align="center" paddingTop="15vh">
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
                 {/* Start New Trip Card */}
                 <Box
