@@ -60,7 +60,7 @@ export const Profile: React.FC<ProfileProps> = ({ open, onClose, name, onImageCh
       <Box p={6}>
         <VStack gap={4} align="stretch">
           <Box display="flex" flexDirection="column" alignItems="center" py={4}>
-            <Avatar.Root size="xl">
+            <Avatar.Root size="2xl">
               <Avatar.Fallback name={name} fontFamily='mono' />
               <Avatar.Image src={image || "#"} />
             </Avatar.Root>
