@@ -31,3 +31,4 @@ server/node_modules/
 venv/
 .venv/
 python-backend/.venv/
+python-backend/__pycache__
